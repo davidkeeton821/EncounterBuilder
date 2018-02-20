@@ -19,7 +19,7 @@ namespace EncounterBuilder
 
         private void OnFileExit( object sender, EventArgs e )
         {
-            MessageBox.Show(this, "Not Implemented", "File Exit", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            Close();
         }
 
         private void OnEncounterNew( object sender, EventArgs e )
@@ -27,8 +27,8 @@ namespace EncounterBuilder
             var form = new EncounterDetailForm();
             form.Text = "Add Encounter";
 
-            //Show for modally
-            var result = form.ShowDialog();
+            //Show form modally
+            var result = form.ShowDialog(this);
             if (result != DialogResult.OK)
                 return;
 
@@ -40,10 +40,8 @@ namespace EncounterBuilder
         private void OnEncounterDelete( object sender, EventArgs e )
         {
             if (ShowConfirmation("Are you sure?", "Remove Product"))
+                _encounter = null;
                 return;
-
-            //TODO: Remove Product
-            MessageBox.Show("Not Implented");
         }
 
         private void OnEncounterLoad( object sender, EventArgs e )

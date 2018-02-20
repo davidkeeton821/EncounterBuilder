@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace WinEncounter
+namespace EncounterBuilder
 {
     public class Encounter
     {
@@ -14,6 +14,13 @@ namespace WinEncounter
             //Accessors
             get { return _name ?? ""; }
             set { _name = value; }
+        }
+
+        /// <summary>Gets or sets the Description.</summary>
+        public string Description
+        {
+            get {return _description ?? ""; }
+            set { _description = value; }
         }
 
         /// <summary>Validates the product.</summary>

@@ -16,5 +16,25 @@ namespace EncounterBuilder
         {
             InitializeComponent();
         }
+
+        public Encounter Encounter { get; set; }
+
+        private void OnCreate( object sender, EventArgs e )
+        {
+            //Create Encounter
+            var encounter = new Encounter();
+            encounter.Name = _textName.Text;
+            encounter.Description = _textDescription.Text;
+
+            //return from form
+            Encounter = encounter;
+            DialogResult = DialogResult.OK;
+            Close();
+        }
+
+        private void OnCancel( object sender, EventArgs e )
+        {
+            //DialogResult set to Cancel, no method needed
+        }
     }
 }

@@ -88,9 +88,9 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\WinEncounter\WinEncounter.csproj">
+    <ProjectReference Include="..\WinEncounter\EncounterBuilder.csproj">
       <Project>{57a27bc6-8e16-4cf7-8dff-b8c9f35b32a1}</Project>
-      <Name>WinEncounter</Name>
+      <Name>EncounterBuilder</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

@@ -23,6 +23,8 @@ namespace EncounterBuilder
             set { _description = value; }
         }
 
+        public DateTime LastEdit { get; set; }
+
         /// <summary>Validates the product.</summary>
         /// <returns>Error message, if any</returns>
         public string Validate()
@@ -36,5 +38,6 @@ namespace EncounterBuilder
 
         private string _name;
         private string _description;
+        private string _lastEdit;
     }
 }

@@ -45,6 +45,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CharacterDetailForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CharacterDetailForm.Designer.cs">
+      <DependentUpon>CharacterDetailForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="EncounterDetailForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -59,6 +65,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="CharacterDetailForm.resx">
+      <DependentUpon>CharacterDetailForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="EncounterDetailForm.resx">
       <DependentUpon>EncounterDetailForm.cs</DependentUpon>
     </EmbeddedResource>

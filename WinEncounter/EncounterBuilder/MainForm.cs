@@ -32,16 +32,15 @@ namespace EncounterBuilder
             if (result != DialogResult.OK)
                 return;
 
+            //"Add" the product
             _encounter = form.Encounter;
-
-            MessageBox.Show(this, "Not Implemented", "Encounter New", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
         }
 
         private void OnEncounterDelete( object sender, EventArgs e )
         {
             if (ShowConfirmation("Are you sure?", "Remove Product"))
                 _encounter = null;
-                return;
+            return;
         }
 
         private void OnEncounterLoad( object sender, EventArgs e )

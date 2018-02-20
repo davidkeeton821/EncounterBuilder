@@ -19,12 +19,13 @@ namespace EncounterBuilder
 
         public Encounter Encounter { get; set; }
 
-        private void OnCreate( object sender, EventArgs e )
+        private void OnSave( object sender, EventArgs e )
         {
             //Create Encounter
             var encounter = new Encounter();
             encounter.Name = _textName.Text;
             encounter.Description = _textDescription.Text;
+            encounter.LastEdit = DateTime.Now;
 
             //return from form
             Encounter = encounter;
@@ -35,6 +36,23 @@ namespace EncounterBuilder
         private void OnCancel( object sender, EventArgs e )
         {
             //DialogResult set to Cancel, no method needed
+        }
+
+        protected override void OnLoad( EventArgs e )
+        {
+            base.OnLoad(e);
+
+            //Load Encounter
+            if (Encounter != null)
+            {
+                _textName.Text = Encounter.Name;
+                _textDescription.Text = Encounter.Description;
+            }
+        }
+
+        private void OnCharacterAdd( object sender, EventArgs e )
+        {
+
         }
     }
 }

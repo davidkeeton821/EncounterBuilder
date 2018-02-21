@@ -32,7 +32,7 @@ namespace EncounterBuilder
             if (result != DialogResult.OK)
                 return;
 
-            //"Add" the product
+            //"Add" the Encounter
             _encounter = form.Encounter;
         }
 

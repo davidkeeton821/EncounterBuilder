@@ -52,7 +52,18 @@ namespace EncounterBuilder
 
         private void OnCharacterAdd( object sender, EventArgs e )
         {
+            var form = new CharacterDetailForm();
+            form.Text = "Add Character";
 
+            //Show form modally
+            var result = form.ShowDialog(this);
+            if (result != DialogResult.OK)
+                return;
+
+            //"Add" the Character
+            _character = form.Character;
         }
+
+        private Character _character;
     }
 }

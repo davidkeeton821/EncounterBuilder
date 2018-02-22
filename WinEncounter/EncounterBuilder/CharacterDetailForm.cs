@@ -19,59 +19,56 @@ namespace EncounterBuilder
 
         public Character Character { get; set; }
 
-        private void _chkBoxRandom(object sender, EventArgs e)
+        private void OnCharacterLoad( object sender, EventArgs e )
         {
-            /*
-            TextBox numberOfDice = new TextBox();
-            Label d = new Label();
-            TextBox diceSize = new TextBox();
-            ListBox keepOrLowest = new ListBox();
-            TextBox keepLowestAmount = new TextBox();
-            ListBox modSign = new ListBox();
-            TextBox modSize = new TextBox();
+            //TODO: implement on load, including UpdateUI() 
+            UpdateUI(sender, e);
+        }
 
-            numberOfDice.Location = new Point(000, 000); //TODO: Find appropriate point
-
-            keepOrLowest.Location = new Point(000, 000); //TODO: Find appropriate point
-            keepOrLowest.Items.Add("-");
-            keepOrLowest.Items.Add("K");
-            keepOrLowest.Items.Add("L");
-            */
-
-            //code for adding to a list box from msdn
-            /*
-            // Create an instance of the ListBox.
-            ListBox listBox1 = new ListBox();
-            // Set the size and location of the ListBox.
-            listBox1.Size = new System.Drawing.Size(200, 100);
-            listBox1.Location = new System.Drawing.Point(10, 10);
-            // Add the ListBox to the form.
-            this.Controls.Add(listBox1);
-            // Set the ListBox to display items in multiple columns.
-            listBox1.MultiColumn = true;
-            // Set the selection mode to multiple and extended.
-            listBox1.SelectionMode = SelectionMode.MultiExtended;
-
-            // Shutdown the painting of the ListBox as items are added.
-            listBox1.BeginUpdate();
-            // Loop through and add 50 items to the ListBox.
-            for (int x = 1; x <= 50; x++)
+        private void UpdateUI (object sender, EventArgs e)
+        {
+            //TODO: Implement dynamic changes to UI
+            //
+            if (_radioFixed.Checked)
             {
-                listBox1.Items.Add("Item " + x.ToString());
+                _radioRandom.Checked = false;
+                _textFixedHP.Enabled = true;
+                _textFixedTHP.Enabled = true;
+
+                _textNumOfDiceHP.Enabled = false;
+                _textNumOfDiceTHP.Enabled = false;
+                _textDieSizeHP.Enabled = false;
+                _textDieSizeTHP.Enabled = false;
+                _listBoxKeepLowHP.Enabled = false;
+                _listBoxKeepLowTHP.Enabled = false;
+                _textNumOfKeepLowHP.Enabled = false;
+                _textNumOfKeepLowTHP.Enabled = false;
+                _listBoxPlusMinusHP.Enabled = false;
+                _listBoxPlusMinusTHP.Enabled = false;
+                _textModNumHP.Enabled = false;
+                _textModNumTHP.Enabled = false;
             }
-            // Allow the ListBox to repaint and display the new items.
-            listBox1.EndUpdate();
 
-            // Select three items from the ListBox.
-            listBox1.SetSelected(1, true);
-            listBox1.SetSelected(3, true);
-            listBox1.SetSelected(5, true);
+            //Random dice, disable fixed health statistics
+            if (_radioRandom.Checked)
+            {
+                _radioFixed.Checked = false;
+                _textFixedHP.Enabled = false;
+                _textFixedTHP.Enabled = false;
 
-            // Display the second selected item in the ListBox to the console.
-            System.Diagnostics.Debug.WriteLine(listBox1.SelectedItems[1].ToString());
-            // Display the index of the first selected item in the ListBox.
-            System.Diagnostics.Debug.WriteLine(listBox1.SelectedIndices[0].ToString());
-            */
+                _textNumOfDiceHP.Enabled = true;
+                _textNumOfDiceTHP.Enabled = true;
+                _textDieSizeHP.Enabled = true;
+                _textDieSizeTHP.Enabled = true;
+                _listBoxKeepLowHP.Enabled = true;
+                _listBoxKeepLowTHP.Enabled = true;
+                _textNumOfKeepLowHP.Enabled = true;
+                _textNumOfKeepLowTHP.Enabled = true;
+                _listBoxPlusMinusHP.Enabled = true;
+                _listBoxPlusMinusTHP.Enabled = true;
+                _textModNumHP.Enabled = true;
+                _textModNumTHP.Enabled = true;
+            }
         }
     }
 }

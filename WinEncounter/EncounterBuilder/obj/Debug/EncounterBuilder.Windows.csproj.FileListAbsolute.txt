@@ -1,0 +1,14 @@
+C:\Users\david.keeton821\Source\Repos\EncounterBuilder\WinEncounter\EncounterBuilder\obj\Debug\EncounterBuilder.Windows.csprojResolveAssemblyReference.cache
+C:\Users\david.keeton821\Source\Repos\EncounterBuilder\WinEncounter\EncounterBuilder\obj\Debug\EncounterBuilder.CharacterDetailForm.resources
+C:\Users\david.keeton821\Source\Repos\EncounterBuilder\WinEncounter\EncounterBuilder\obj\Debug\EncounterBuilder.EncounterDetailForm.resources
+C:\Users\david.keeton821\Source\Repos\EncounterBuilder\WinEncounter\EncounterBuilder\obj\Debug\EncounterBuilder.MainForm.resources
+C:\Users\david.keeton821\Source\Repos\EncounterBuilder\WinEncounter\EncounterBuilder\obj\Debug\EncounterBuilder.Properties.Resources.resources
+C:\Users\david.keeton821\Source\Repos\EncounterBuilder\WinEncounter\EncounterBuilder\obj\Debug\EncounterBuilder.Windows.csproj.GenerateResource.Cache
+C:\Users\david.keeton821\Source\Repos\EncounterBuilder\WinEncounter\EncounterBuilder\obj\Debug\EncounterBuilder.Windows.csproj.CoreCompileInputs.cache
+C:\Users\david.keeton821\Source\Repos\EncounterBuilder\WinEncounter\EncounterBuilder\bin\Debug\EncounterBuilder.exe.config
+C:\Users\david.keeton821\Source\Repos\EncounterBuilder\WinEncounter\EncounterBuilder\bin\Debug\EncounterBuilder.exe
+C:\Users\david.keeton821\Source\Repos\EncounterBuilder\WinEncounter\EncounterBuilder\bin\Debug\EncounterBuilder.pdb
+C:\Users\david.keeton821\Source\Repos\EncounterBuilder\WinEncounter\EncounterBuilder\bin\Debug\WinEncounter.dll
+C:\Users\david.keeton821\Source\Repos\EncounterBuilder\WinEncounter\EncounterBuilder\bin\Debug\WinEncounter.pdb
+C:\Users\david.keeton821\Source\Repos\EncounterBuilder\WinEncounter\EncounterBuilder\obj\Debug\EncounterBuilder.exe
+C:\Users\david.keeton821\Source\Repos\EncounterBuilder\WinEncounter\EncounterBuilder\obj\Debug\EncounterBuilder.pdb

@@ -26,9 +26,8 @@ namespace EncounterBuilder
         }
 
         private void UpdateUI (object sender, EventArgs e)
-        {
-            //TODO: Implement dynamic changes to UI
-            //
+        {            
+            //Fixed health, disable random health stats
             if (_radioFixed.Checked)
             {
                 _radioRandom.Checked = false;
@@ -49,7 +48,7 @@ namespace EncounterBuilder
                 _textModNumTHP.Enabled = false;
             }
 
-            //Random dice, disable fixed health statistics
+            //Random dice, disable fixed health stats
             if (_radioRandom.Checked)
             {
                 _radioFixed.Checked = false;
@@ -68,6 +67,35 @@ namespace EncounterBuilder
                 _listBoxPlusMinusTHP.Enabled = true;
                 _textModNumHP.Enabled = true;
                 _textModNumTHP.Enabled = true;
+            }
+        }
+
+        private void OncheckStrSvThrwProfChecked(object sender, EventArgs e)
+        {
+            //Character.StrSvThrwProf = true;
+            //_checkStrSvThrwProf.Checked = true;
+        }
+
+        private void OnSave(object sender, EventArgs e)
+        {
+
+        }
+
+        private void OnRawStrengthValueEntered(object sender, EventArgs e)
+        {
+            var result = Int32.TryParse(_textStrRaw.Text, out int value);
+            
+            if (result)
+            {
+                value = Convert.ToInt32(Math.Floor((value - 10) / 2.0));
+                if (value >= 0)
+                    _textStrMod.Text = $"+{value}";
+                else
+                    _textStrMod.Text = $"-{value}";
+            }
+            else
+            {
+                _textStrMod.Text = "";
             }
         }
     }

@@ -1,0 +1,12 @@
+C:\Users\david.keeton821\Source\Repos\EncounterBuilder\WinEncounter\WinEncounter\bin\Debug\WinEncounter.dll
+C:\Users\david.keeton821\Source\Repos\EncounterBuilder\WinEncounter\WinEncounter\bin\Debug\WinEncounter.pdb
+C:\Users\david.keeton821\Source\Repos\EncounterBuilder\WinEncounter\WinEncounter\obj\Debug\EncounterBuilder.csprojResolveAssemblyReference.cache
+C:\Users\david.keeton821\Source\Repos\EncounterBuilder\WinEncounter\WinEncounter\obj\Debug\EncounterBuilder.csproj.CoreCompileInputs.cache
+C:\Users\david.keeton821\Source\Repos\EncounterBuilder\WinEncounter\WinEncounter\obj\Debug\WinEncounter.dll
+C:\Users\david.keeton821\Source\Repos\EncounterBuilder\WinEncounter\WinEncounter\obj\Debug\WinEncounter.pdb
+C:\Users\David\Source\Repos\EncounterBuilder\WinEncounter\WinEncounter\bin\Debug\WinEncounter.dll
+C:\Users\David\Source\Repos\EncounterBuilder\WinEncounter\WinEncounter\bin\Debug\WinEncounter.pdb
+C:\Users\David\Source\Repos\EncounterBuilder\WinEncounter\WinEncounter\obj\Debug\EncounterBuilder.csprojResolveAssemblyReference.cache
+C:\Users\David\Source\Repos\EncounterBuilder\WinEncounter\WinEncounter\obj\Debug\EncounterBuilder.csproj.CoreCompileInputs.cache
+C:\Users\David\Source\Repos\EncounterBuilder\WinEncounter\WinEncounter\obj\Debug\WinEncounter.dll
+C:\Users\David\Source\Repos\EncounterBuilder\WinEncounter\WinEncounter\obj\Debug\WinEncounter.pdb

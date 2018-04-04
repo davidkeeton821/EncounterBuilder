@@ -8,6 +8,8 @@ namespace EncounterBuilder
 {
     public class Encounter
     {
+        public int Id { get; set; }
+
         /// <summary>Gets or sets the name.</summary>
         public string Name
         {
@@ -35,6 +37,8 @@ namespace EncounterBuilder
 
             return "";
         }
+
+        public List<Character> Characters { get; set; }
 
         private string _name;
         private string _description;

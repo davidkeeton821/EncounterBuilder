@@ -17,6 +17,12 @@ namespace EncounterBuilder
             InitializeComponent();
         }
 
+        public EncounterDetailForm (Encounter encounter)
+        {
+            Text = ("Edit Encounter");
+            Encounter = encounter;
+        }
+
         public Encounter Encounter { get; set; }
 
         private void OnSave( object sender, EventArgs e )
@@ -26,6 +32,7 @@ namespace EncounterBuilder
             encounter.Name = _textName.Text;
             encounter.Description = _textDescription.Text;
             encounter.LastEdit = DateTime.Now;
+            encounter.Characters = _characters;
 
             //return from form
             Encounter = encounter;
@@ -47,6 +54,7 @@ namespace EncounterBuilder
             {
                 _textName.Text = Encounter.Name;
                 _textDescription.Text = Encounter.Description;
+                _characters = Encounter.Characters;
             }
         }
 
@@ -61,9 +69,9 @@ namespace EncounterBuilder
                 return;
 
             //"Add" the Character
-            _character = form.Character;
+            _characters.Add(form.Character);
         }
 
-        private Character _character;
+        private List<Character> _characters;
     }
 }

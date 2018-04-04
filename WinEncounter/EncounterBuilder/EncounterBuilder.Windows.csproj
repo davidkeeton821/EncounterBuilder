@@ -57,6 +57,12 @@
     <Compile Include="EncounterDetailForm.Designer.cs">
       <DependentUpon>EncounterDetailForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="LoadEncounterForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="LoadEncounterForm.Designer.cs">
+      <DependentUpon>LoadEncounterForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="MainForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -71,6 +77,9 @@
     <EmbeddedResource Include="EncounterDetailForm.resx">
       <DependentUpon>EncounterDetailForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="LoadEncounterForm.resx">
+      <DependentUpon>LoadEncounterForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -83,6 +92,7 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <None Include="Properties\DataSources\Encounter.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -97,6 +107,10 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\EncounterBuilder.Data.Memory\EncounterBuilder.Data.Memory.csproj">
+      <Project>{0F3C0135-7D12-4CD4-A893-76BE29EB178E}</Project>
+      <Name>EncounterBuilder.Data.Memory</Name>
+    </ProjectReference>
     <ProjectReference Include="..\WinEncounter\EncounterBuilder.csproj">
       <Project>{57a27bc6-8e16-4cf7-8dff-b8c9f35b32a1}</Project>
       <Name>EncounterBuilder</Name>

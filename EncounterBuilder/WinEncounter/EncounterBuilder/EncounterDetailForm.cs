@@ -19,6 +19,7 @@ namespace EncounterBuilder
 
         public EncounterDetailForm (Encounter encounter)
         {
+            InitializeComponent();
             Text = ("Edit Encounter");
             Encounter = encounter;
         }

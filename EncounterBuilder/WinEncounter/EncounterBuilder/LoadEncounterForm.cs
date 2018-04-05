@@ -13,34 +13,31 @@ namespace EncounterBuilder
 {
     public partial class LoadEncounterForm : Form
     {
-        public LoadEncounterForm(IEncounterBuilderDatabase database)
-        {          
-            _source = database;
+        public LoadEncounterForm()
+        {
+            InitializeComponent();
         }
 
         protected override void OnLoad(EventArgs e)
         {
             base.OnLoad(e);
 
-            IEnumerable<Encounter> encounters = _source.GetAll();;
-            //try
-            //{
-                //enumDatabase = 
+            IEnumerable<Encounter> encounters = null;
+            try
+            {
+                encounters = Source.GetAll();
                 encounterBindingSource.DataSource = encounters.ToList();
-            //}
-            //catch (Exception ex)
-            //{
-               // MessageBox.Show("Error loading encounters");
-                //return;
-            //}
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error loading encounters");
+                return;
+            }
+
+            _dataGridViewLoadEncounter.ClearSelection();
         }
 
-        public LoadEncounterForm()
-        {
-            InitializeComponent();
-        }
-
-        private IEncounterBuilderDatabase _source {get; set;}
+        public IEncounterBuilderDatabase Source {get; set;}
 
         public Encounter Encounter { get; set; }
 
@@ -52,5 +49,53 @@ namespace EncounterBuilder
                 Encounter = encounter;
             }           
         }
-    }
+
+        private void _dataGridViewLoadEncounter_ColumnHeaderMouseClick( object sender, DataGridViewCellMouseEventArgs e )
+        {
+            //need to be able to implement a sortable BindingSource to be able to sort by column
+
+            //var columnIndex = e.ColumnIndex;
+            //// Check which column is selected, otherwise set NewColumn to null.
+            //DataGridViewColumn newColumn = _dataGridViewLoadEncounter.Columns[columnIndex];
+            //    //_dataGridViewLoadEncounter.Columns.GetColumnCount(
+            //    //DataGridViewElementStates.Selected) == 1 ?
+            //    //_dataGridViewLoadEncounter.SelectedColumns[0] : null;
+
+            //DataGridViewColumn oldColumn = _dataGridViewLoadEncounter.SortedColumn;
+            //ListSortDirection direction;
+
+            //// If oldColumn is null, then the DataGridView is not currently sorted.
+            //if (oldColumn != null)
+            //{
+            //    // Sort the same column again, reversing the SortOrder.
+            //    if (oldColumn == newColumn &&
+            //        _dataGridViewLoadEncounter.SortOrder == SortOrder.Ascending)
+            //    {
+            //        direction = ListSortDirection.Descending;
+            //    } else
+            //    {
+            //        // Sort a new column and remove the old SortGlyph.
+            //        direction = ListSortDirection.Ascending;
+            //        oldColumn.HeaderCell.SortGlyphDirection = SortOrder.None;
+            //    }
+            //} else
+            //{
+            //    direction = ListSortDirection.Ascending;
+            //}
+
+            //// If no column has been selected, display an error dialog  box.
+            //if (newColumn == null)
+            //{
+            //    MessageBox.Show("Select a single column and try again.",
+            //        "Error: Invalid Selection", MessageBoxButtons.OK,
+            //        MessageBoxIcon.Error);
+            //} else
+            //{
+            //    _dataGridViewLoadEncounter.Sort(newColumn, direction);
+            //    newColumn.HeaderCell.SortGlyphDirection =
+            //        direction == ListSortDirection.Ascending ?
+            //        SortOrder.Ascending : SortOrder.Descending;
+            //}
+        }
+    }    
 }

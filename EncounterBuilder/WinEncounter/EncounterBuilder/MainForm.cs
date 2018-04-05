@@ -55,7 +55,8 @@ namespace EncounterBuilder
 
         private void OnEncounterDelete( object sender, EventArgs e )
         {
-            var encounter = GetEncounter("Delete Encounter");
+            bool edit = false;
+            var encounter = GetEncounter(edit);
             if (encounter == null)
             {
                 MessageBox.Show(this, "No Encounter Selected", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -65,14 +66,24 @@ namespace EncounterBuilder
             DeleteEncounter(encounter);
         }
 
-        private Encounter GetEncounter(string title)
+        private Encounter GetEncounter(bool edit)
         {
+            //TODO: fix button and window title for edit/delete
+            string title;
+            if(edit)
+            {
+                title = "";
+
+            }
+
             try
             {
-                var form = new LoadEncounterForm(_database)
+                var form = new LoadEncounterForm()
                 {
+                    Source = _database,                   
                     Text = title
                 };
+
                 //Show form modally
                 var result = form.ShowDialog(this);
                 if (result != DialogResult.OK)
@@ -81,10 +92,9 @@ namespace EncounterBuilder
                 return form.Encounter;
             }catch
             {
+                MessageBox.Show(this, "No Encounter Selected", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return null;
-            }
-
-            
+            }          
         }
 
         private void DeleteEncounter( Encounter encounter )
@@ -106,12 +116,9 @@ namespace EncounterBuilder
         {
             //Get selected Encounter
             var encounter = GetEncounter("Load Encounter");
-            if (encounter == null)
-            {
-                MessageBox.Show(this, "No Encounter Selected", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            if (encounter == null)                
                 return;
-            };
-
+            
             EditEncounter(encounter);
         }
 

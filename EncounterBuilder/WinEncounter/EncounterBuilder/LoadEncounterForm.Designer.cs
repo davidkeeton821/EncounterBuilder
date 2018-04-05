@@ -69,6 +69,7 @@
             this._dataGridViewLoadEncounter.ShowCellErrors = false;
             this._dataGridViewLoadEncounter.Size = new System.Drawing.Size(543, 350);
             this._dataGridViewLoadEncounter.TabIndex = 0;
+            this._dataGridViewLoadEncounter.ColumnHeaderMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this._dataGridViewLoadEncounter_ColumnHeaderMouseClick);
             // 
             // encounterBindingSource
             // 
@@ -76,7 +77,7 @@
             // 
             // _btnLoad
             // 
-            this._btnLoad.DialogResult = System.Windows.Forms.DialogResult.Cancel;
+            this._btnLoad.DialogResult = System.Windows.Forms.DialogResult.OK;
             this._btnLoad.Location = new System.Drawing.Point(415, 379);
             this._btnLoad.Margin = new System.Windows.Forms.Padding(2);
             this._btnLoad.Name = "_btnLoad";
@@ -100,27 +101,33 @@
             // nameDataGridViewTextBoxColumn
             // 
             this.nameDataGridViewTextBoxColumn.DataPropertyName = "Name";
+            this.nameDataGridViewTextBoxColumn.FillWeight = 33F;
             this.nameDataGridViewTextBoxColumn.Frozen = true;
             this.nameDataGridViewTextBoxColumn.HeaderText = "Name";
-            this.nameDataGridViewTextBoxColumn.MinimumWidth = 100;
+            this.nameDataGridViewTextBoxColumn.MinimumWidth = 125;
             this.nameDataGridViewTextBoxColumn.Name = "nameDataGridViewTextBoxColumn";
             this.nameDataGridViewTextBoxColumn.ReadOnly = true;
+            this.nameDataGridViewTextBoxColumn.Width = 125;
             // 
             // descriptionDataGridViewTextBoxColumn
             // 
             this.descriptionDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.descriptionDataGridViewTextBoxColumn.DataPropertyName = "Description";
+            this.descriptionDataGridViewTextBoxColumn.FillWeight = 33F;
             this.descriptionDataGridViewTextBoxColumn.HeaderText = "Description";
+            this.descriptionDataGridViewTextBoxColumn.MinimumWidth = 100;
             this.descriptionDataGridViewTextBoxColumn.Name = "descriptionDataGridViewTextBoxColumn";
             this.descriptionDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // lastEditDataGridViewTextBoxColumn
             // 
             this.lastEditDataGridViewTextBoxColumn.DataPropertyName = "LastEdit";
+            this.lastEditDataGridViewTextBoxColumn.FillWeight = 33F;
             this.lastEditDataGridViewTextBoxColumn.HeaderText = "LastEdit";
-            this.lastEditDataGridViewTextBoxColumn.MinimumWidth = 100;
+            this.lastEditDataGridViewTextBoxColumn.MinimumWidth = 125;
             this.lastEditDataGridViewTextBoxColumn.Name = "lastEditDataGridViewTextBoxColumn";
             this.lastEditDataGridViewTextBoxColumn.ReadOnly = true;
+            this.lastEditDataGridViewTextBoxColumn.Width = 125;
             // 
             // LoadEncounterForm
             // 

@@ -68,10 +68,10 @@ namespace EncounterBuilder.Data.Memory
             return null;
         }
 
-        private Encounter Clone( Encounter item )
+        private Encounter Clone( Encounter encounter )
         {
             var newEncounter = new Encounter();
-            Copy(newEncounter, item);
+            Copy(newEncounter, encounter);
 
             return newEncounter;
         }

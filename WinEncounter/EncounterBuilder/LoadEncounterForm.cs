@@ -1,4 +1,5 @@
-﻿using System;
+﻿using EncounterBuilder.Data;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -17,9 +18,40 @@ namespace EncounterBuilder
             InitializeComponent();
         }
 
-        private void LoadEncounterForm_Load( object sender, EventArgs e )
-        {
+        //public LoadEncounterForm(IEncounterBuilderDatabase database)
+        //{
+        //    InitializeComponent();
+        //    _source = database;
+        //}
 
+        protected override void OnLoad(EventArgs e)
+        {
+            base.OnLoad(e);
+
+            IEnumerable<Encounter> encounters = null;
+            try
+            {
+                encounters = Source.GetAll();
+                _dataGridViewLoadEncounter.DataSource = encounters.ToList();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error loading encounters");
+                return;
+            }
+        }
+
+        public IEncounterBuilderDatabase Source {get; set;}
+
+        public Encounter Encounter { get; set; }
+
+        private void OnButtonLoadClick(object sender, EventArgs e)
+        {
+            if (_dataGridViewLoadEncounter.SelectedRows.Count > 0)
+            {
+                var encounter = _dataGridViewLoadEncounter.SelectedRows[0].DataBoundItem as Encounter;
+                Encounter = encounter;
+            }           
         }
     }
 }

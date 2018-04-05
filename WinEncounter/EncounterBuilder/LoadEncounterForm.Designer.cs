@@ -30,80 +30,64 @@
         {
             this.components = new System.ComponentModel.Container();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.encounterBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this._btnLoad = new System.Windows.Forms.Button();
-            this._btnCancel = new System.Windows.Forms.Button();
+            this._dataGridViewLoadEncounter = new System.Windows.Forms.DataGridView();
+            this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.descriptionDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.lastEditDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.encounterBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this._btnLoad = new System.Windows.Forms.Button();
+            this._btnCancel = new System.Windows.Forms.Button();
+            ((System.ComponentModel.ISupportInitialize)(this._dataGridViewLoadEncounter)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.encounterBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
-            // dataGridView1
+            // _dataGridViewLoadEncounter
             // 
-            this.dataGridView1.AllowUserToAddRows = false;
-            this.dataGridView1.AllowUserToDeleteRows = false;
-            this.dataGridView1.AllowUserToResizeRows = false;
+            this._dataGridViewLoadEncounter.AllowUserToAddRows = false;
+            this._dataGridViewLoadEncounter.AllowUserToDeleteRows = false;
+            this._dataGridViewLoadEncounter.AllowUserToResizeColumns = false;
+            this._dataGridViewLoadEncounter.AllowUserToResizeRows = false;
             dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.dataGridView1.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
-            this.dataGridView1.AutoGenerateColumns = false;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this._dataGridViewLoadEncounter.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            this._dataGridViewLoadEncounter.AutoGenerateColumns = false;
+            this._dataGridViewLoadEncounter.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this._dataGridViewLoadEncounter.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.idDataGridViewTextBoxColumn,
             this.nameDataGridViewTextBoxColumn,
             this.descriptionDataGridViewTextBoxColumn,
             this.lastEditDataGridViewTextBoxColumn});
-            this.dataGridView1.DataSource = this.encounterBindingSource;
-            this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.dataGridView1.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
-            this.dataGridView1.Location = new System.Drawing.Point(0, 0);
-            this.dataGridView1.MultiSelect = false;
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.ReadOnly = true;
-            this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridView1.ShowCellErrors = false;
-            this.dataGridView1.Size = new System.Drawing.Size(722, 431);
-            this.dataGridView1.TabIndex = 0;
+            this._dataGridViewLoadEncounter.DataSource = this.encounterBindingSource;
+            this._dataGridViewLoadEncounter.Dock = System.Windows.Forms.DockStyle.Top;
+            this._dataGridViewLoadEncounter.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
+            this._dataGridViewLoadEncounter.Location = new System.Drawing.Point(0, 0);
+            this._dataGridViewLoadEncounter.Margin = new System.Windows.Forms.Padding(2);
+            this._dataGridViewLoadEncounter.MultiSelect = false;
+            this._dataGridViewLoadEncounter.Name = "_dataGridViewLoadEncounter";
+            this._dataGridViewLoadEncounter.ReadOnly = true;
+            this._dataGridViewLoadEncounter.RowHeadersVisible = false;
+            this._dataGridViewLoadEncounter.RowTemplate.Height = 24;
+            this._dataGridViewLoadEncounter.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this._dataGridViewLoadEncounter.ShowCellErrors = false;
+            this._dataGridViewLoadEncounter.Size = new System.Drawing.Size(543, 350);
+            this._dataGridViewLoadEncounter.TabIndex = 0;
             // 
-            // encounterBindingSource
+            // idDataGridViewTextBoxColumn
             // 
-            this.encounterBindingSource.DataSource = typeof(EncounterBuilder.Encounter);
-            // 
-            // _btnLoad
-            // 
-            this._btnLoad.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this._btnLoad.Location = new System.Drawing.Point(553, 467);
-            this._btnLoad.Name = "_btnLoad";
-            this._btnLoad.Size = new System.Drawing.Size(75, 23);
-            this._btnLoad.TabIndex = 1;
-            this._btnLoad.Text = "Load";
-            this._btnLoad.UseVisualStyleBackColor = true;
-            // 
-            // _btnCancel
-            // 
-            this._btnCancel.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this._btnCancel.Location = new System.Drawing.Point(634, 467);
-            this._btnCancel.Name = "_btnCancel";
-            this._btnCancel.Size = new System.Drawing.Size(75, 23);
-            this._btnCancel.TabIndex = 2;
-            this._btnCancel.Text = "Cancel";
-            this._btnCancel.UseVisualStyleBackColor = true;
+            this.idDataGridViewTextBoxColumn.DataPropertyName = "Id";
+            this.idDataGridViewTextBoxColumn.HeaderText = "Id";
+            this.idDataGridViewTextBoxColumn.Name = "idDataGridViewTextBoxColumn";
+            this.idDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // nameDataGridViewTextBoxColumn
             // 
             this.nameDataGridViewTextBoxColumn.DataPropertyName = "Name";
-            this.nameDataGridViewTextBoxColumn.Frozen = true;
             this.nameDataGridViewTextBoxColumn.HeaderText = "Name";
-            this.nameDataGridViewTextBoxColumn.MinimumWidth = 100;
             this.nameDataGridViewTextBoxColumn.Name = "nameDataGridViewTextBoxColumn";
             this.nameDataGridViewTextBoxColumn.ReadOnly = true;
-            this.nameDataGridViewTextBoxColumn.Width = 200;
             // 
             // descriptionDataGridViewTextBoxColumn
             // 
-            this.descriptionDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.descriptionDataGridViewTextBoxColumn.DataPropertyName = "Description";
             this.descriptionDataGridViewTextBoxColumn.HeaderText = "Description";
             this.descriptionDataGridViewTextBoxColumn.Name = "descriptionDataGridViewTextBoxColumn";
@@ -115,26 +99,52 @@
             this.lastEditDataGridViewTextBoxColumn.HeaderText = "LastEdit";
             this.lastEditDataGridViewTextBoxColumn.Name = "lastEditDataGridViewTextBoxColumn";
             this.lastEditDataGridViewTextBoxColumn.ReadOnly = true;
-            this.lastEditDataGridViewTextBoxColumn.Width = 200;
+            // 
+            // encounterBindingSource
+            // 
+            this.encounterBindingSource.DataSource = typeof(EncounterBuilder.Encounter);
+            // 
+            // _btnLoad
+            // 
+            this._btnLoad.DialogResult = System.Windows.Forms.DialogResult.OK;
+            this._btnLoad.Location = new System.Drawing.Point(415, 379);
+            this._btnLoad.Margin = new System.Windows.Forms.Padding(2);
+            this._btnLoad.Name = "_btnLoad";
+            this._btnLoad.Size = new System.Drawing.Size(56, 19);
+            this._btnLoad.TabIndex = 1;
+            this._btnLoad.Text = "Load";
+            this._btnLoad.UseVisualStyleBackColor = true;
+            this._btnLoad.Click += new System.EventHandler(this.OnButtonLoadClick);
+            // 
+            // _btnCancel
+            // 
+            this._btnCancel.DialogResult = System.Windows.Forms.DialogResult.Cancel;
+            this._btnCancel.Location = new System.Drawing.Point(476, 379);
+            this._btnCancel.Margin = new System.Windows.Forms.Padding(2);
+            this._btnCancel.Name = "_btnCancel";
+            this._btnCancel.Size = new System.Drawing.Size(56, 19);
+            this._btnCancel.TabIndex = 2;
+            this._btnCancel.Text = "Cancel";
+            this._btnCancel.UseVisualStyleBackColor = true;
             // 
             // LoadEncounterForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.CancelButton = this._btnLoad;
-            this.ClientSize = new System.Drawing.Size(722, 503);
+            this.ClientSize = new System.Drawing.Size(543, 415);
             this.Controls.Add(this._btnCancel);
             this.Controls.Add(this._btnLoad);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this._dataGridViewLoadEncounter);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
-            this.MinimumSize = new System.Drawing.Size(740, 550);
+            this.MinimumSize = new System.Drawing.Size(559, 454);
             this.Name = "LoadEncounterForm";
             this.ShowIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Load Encounter";
-            this.Load += new System.EventHandler(this.LoadEncounterForm_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this._dataGridViewLoadEncounter)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.encounterBindingSource)).EndInit();
             this.ResumeLayout(false);
 
@@ -142,12 +152,13 @@
 
         #endregion
 
-        private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.BindingSource encounterBindingSource;
+        private System.Windows.Forms.DataGridView _dataGridViewLoadEncounter;
         private System.Windows.Forms.Button _btnLoad;
         private System.Windows.Forms.Button _btnCancel;
+        private System.Windows.Forms.DataGridViewTextBoxColumn idDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn nameDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn descriptionDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn lastEditDataGridViewTextBoxColumn;
+        private System.Windows.Forms.BindingSource encounterBindingSource;
     }
 }

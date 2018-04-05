@@ -67,17 +67,23 @@ namespace EncounterBuilder
 
         private Encounter GetEncounter(string title)
         {
-            var form = new LoadEncounterForm();
+            try
             {
-                Text = title
-            };
+                var form = new LoadEncounterForm()
+                {
+                    Text = title,
+                    Source = _database
+                };
+                //Show form modally
+                var result = form.ShowDialog(this);
+                if (result != DialogResult.OK)
+                    return null;
 
-            //Show form modally
-            var result = form.ShowDialog(this);
-            if (result != DialogResult.OK)
+                return form.Encounter;
+            }catch
+            {
                 return null;
-
-            return form;
+            }         
         }
 
         private void DeleteEncounter( Encounter encounter )
@@ -98,7 +104,7 @@ namespace EncounterBuilder
         private void OnEncounterLoad( object sender, EventArgs e )
         {
             //Get selected Encounter
-            var encounter = GetEncounter("");
+            var encounter = GetEncounter("Load Encounter");
             if (encounter == null)
             {
                 MessageBox.Show(this, "No Encounter Selected", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -113,8 +119,8 @@ namespace EncounterBuilder
             var form = new EncounterDetailForm(encounter);
 
             //Show form modally
-            var result = form.ShowDialog(this); //show child form (ProductRetailForm), return back dailog result
-            if (result != DialogResult.OK)  //use dialog result from child form
+            var result = form.ShowDialog(this);
+            if (result != DialogResult.OK)
                 return;
 
             //Add to database
@@ -126,11 +132,9 @@ namespace EncounterBuilder
             {
                 MessageBox.Show(e.Message);
             };
-
-            RefreshUI();
         }
 
-            private void OnHelpAbout( object sender, EventArgs e )
+        private void OnHelpAbout( object sender, EventArgs e )
         {
             MessageBox.Show(this, "Not Implemented", "Help About", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
         }
@@ -140,6 +144,6 @@ namespace EncounterBuilder
             return (MessageBox.Show(this, message, title, MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes);
         }
 
-        private IEncounterBuilderDatabase _database;
+        private IEncounterBuilderDatabase _database = new MemoryEncounterBuilderDatabase();
     }
 }

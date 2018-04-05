@@ -27,3 +27,6 @@ C:\Users\David\Source\Repos\EncounterBuilder\WinEncounter\EncounterBuilder\obj\D
 C:\Users\David\Source\Repos\EncounterBuilder\WinEncounter\EncounterBuilder\obj\Debug\EncounterBuilder.exe
 C:\Users\David\Source\Repos\EncounterBuilder\WinEncounter\EncounterBuilder\obj\Debug\EncounterBuilder.pdb
 C:\Users\David\Source\Repos\EncounterBuilder\WinEncounter\EncounterBuilder\obj\Debug\EncounterBuilder.LoadEncounterForm.resources
+C:\Users\david.keeton821\Source\Repos\EncounterBuilder\WinEncounter\EncounterBuilder\bin\Debug\EncounterBuilder.Data.Memory.dll
+C:\Users\david.keeton821\Source\Repos\EncounterBuilder\WinEncounter\EncounterBuilder\bin\Debug\EncounterBuilder.Data.Memory.pdb
+C:\Users\david.keeton821\Source\Repos\EncounterBuilder\WinEncounter\EncounterBuilder\obj\Debug\EncounterBuilder.LoadEncounterForm.resources

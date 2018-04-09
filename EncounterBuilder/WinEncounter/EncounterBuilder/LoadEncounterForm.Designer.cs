@@ -31,12 +31,12 @@
             this.components = new System.ComponentModel.Container();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this._dataGridViewLoadEncounter = new System.Windows.Forms.DataGridView();
-            this.encounterBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this._btnLoad = new System.Windows.Forms.Button();
             this._btnCancel = new System.Windows.Forms.Button();
             this.nameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.descriptionDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.lastEditDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.encounterBindingSource = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this._dataGridViewLoadEncounter)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.encounterBindingSource)).BeginInit();
             this.SuspendLayout();
@@ -71,10 +71,6 @@
             this._dataGridViewLoadEncounter.TabIndex = 0;
             this._dataGridViewLoadEncounter.ColumnHeaderMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this._dataGridViewLoadEncounter_ColumnHeaderMouseClick);
             // 
-            // encounterBindingSource
-            // 
-            this.encounterBindingSource.DataSource = typeof(EncounterBuilder.Encounter);
-            // 
             // _btnLoad
             // 
             this._btnLoad.DialogResult = System.Windows.Forms.DialogResult.OK;
@@ -89,6 +85,7 @@
             // 
             // _btnCancel
             // 
+            this._btnCancel.CausesValidation = false;
             this._btnCancel.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this._btnCancel.Location = new System.Drawing.Point(476, 379);
             this._btnCancel.Margin = new System.Windows.Forms.Padding(2);
@@ -128,6 +125,10 @@
             this.lastEditDataGridViewTextBoxColumn.Name = "lastEditDataGridViewTextBoxColumn";
             this.lastEditDataGridViewTextBoxColumn.ReadOnly = true;
             this.lastEditDataGridViewTextBoxColumn.Width = 125;
+            // 
+            // encounterBindingSource
+            // 
+            this.encounterBindingSource.DataSource = typeof(EncounterBuilder.Encounter);
             // 
             // LoadEncounterForm
             // 

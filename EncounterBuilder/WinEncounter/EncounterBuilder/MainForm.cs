@@ -55,34 +55,55 @@ namespace EncounterBuilder
 
         private void OnEncounterDelete( object sender, EventArgs e )
         {
-            bool edit = false;
-            var encounter = GetEncounter(edit);
-            if (encounter == null)
+            var edit = false;
+            Encounter encounter = null;
+            try
             {
-                MessageBox.Show(this, "No Encounter Selected", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return;
-            };
+                encounter = GetEncounter(edit);              
+            } catch(Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
 
-            DeleteEncounter(encounter);
+            if(encounter != null)
+                DeleteEncounter(encounter); 
+        }
+
+        private void OnEncounterLoad(object sender, EventArgs e)
+        {
+            var edit = true;
+            //Get selected Encounter
+            var encounter = GetEncounter(edit);
+
+            EditEncounter(encounter);
         }
 
         private Encounter GetEncounter(bool edit)
-        {
-            //TODO: fix button and window title for edit/delete
-            string title;
-            if(edit)
-            {
-                title = "";
-
-            }
-
+        {       
             try
             {
                 var form = new LoadEncounterForm()
                 {
-                    Source = _database,                   
-                    Text = title
+                    Source = _database                  
                 };
+                var temp = form.Controls.Find("_dataGridViewLoadEncounter", true);
+                var grid = temp[0] as DataGridView;
+                if (grid.RowCount < 1)
+                {
+                    throw new Exception("No Encounters");
+                }
+                if (edit)
+                {
+                    form.Text = "Edit Encounter";
+                    var button = form.Controls.Find("_btnLoad", true);
+                    button[0].Text = "Edit";
+                }
+                else
+                {
+                    form.Text = "Delete Encounter";
+                    var button = form.Controls.Find("_btnLoad", true);
+                    button[0].Text = "Delete";
+                }                             
 
                 //Show form modally
                 var result = form.ShowDialog(this);
@@ -92,6 +113,7 @@ namespace EncounterBuilder
                 return form.Encounter;
             }catch
             {
+                //TODO: show correct error for correct situation
                 MessageBox.Show(this, "No Encounter Selected", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return null;
             }          
@@ -110,16 +132,6 @@ namespace EncounterBuilder
             {
                 MessageBox.Show(e.Message);
             }
-        }
-
-        private void OnEncounterLoad( object sender, EventArgs e )
-        {
-            //Get selected Encounter
-            var encounter = GetEncounter("Load Encounter");
-            if (encounter == null)                
-                return;
-            
-            EditEncounter(encounter);
         }
 
         private void EditEncounter( Encounter encounter )

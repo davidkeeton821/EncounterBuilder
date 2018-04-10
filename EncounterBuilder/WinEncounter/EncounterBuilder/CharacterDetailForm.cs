@@ -78,7 +78,16 @@ namespace EncounterBuilder
 
         private void OnSave(object sender, EventArgs e)
         {
+            //Create Encounter
+            var character = new Character
+            {
+                Name = _textName.Text,              
+            };
 
+            //return from form
+            Character = character;
+            DialogResult = DialogResult.OK;
+            Close();
         }
 
         private void OnRawStrengthValueEntered(object sender, EventArgs e)

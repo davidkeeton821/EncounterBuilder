@@ -28,7 +28,7 @@ namespace EncounterBuilder
                 encounters = Source.GetAll();
                 encounterBindingSource.DataSource = encounters.ToList();
             }
-            catch (Exception ex)
+            catch
             {
                 MessageBox.Show("Error loading encounters");
                 return;

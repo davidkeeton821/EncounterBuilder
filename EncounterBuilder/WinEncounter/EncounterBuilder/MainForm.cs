@@ -57,13 +57,8 @@ namespace EncounterBuilder
         {
             var edit = false;
             Encounter encounter = null;
-            try
-            {
-                encounter = GetEncounter(edit);              
-            } catch(Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
+
+            encounter = GetEncounter(edit);              
 
             if(encounter != null)
                 DeleteEncounter(encounter); 
@@ -72,51 +67,55 @@ namespace EncounterBuilder
         private void OnEncounterLoad(object sender, EventArgs e)
         {
             var edit = true;
-            //Get selected Encounter
-            var encounter = GetEncounter(edit);
+            Encounter encounter = null;
 
-            EditEncounter(encounter);
+            encounter = GetEncounter(edit);
+              
+            if (encounter != null)
+                EditEncounter(encounter);
         }
 
         private Encounter GetEncounter(bool edit)
         {       
             try
             {
+                var source = _database.GetAll();
+                if (!source.Any())
+                    throw new Exception("No Encounters To Show");
+
                 var form = new LoadEncounterForm()
                 {
-                    Source = _database                  
+                    Source = _database                
                 };
-                var temp = form.Controls.Find("_dataGridViewLoadEncounter", true);
-                var grid = temp[0] as DataGridView;
-                if (grid.RowCount < 1)
-                {
-                    throw new Exception("No Encounters");
-                }
+
+                var button = form.Controls.Find("_btnLoad", true);
                 if (edit)
                 {
-                    form.Text = "Edit Encounter";
-                    var button = form.Controls.Find("_btnLoad", true);
+                    form.Text = "Edit Encounter";                   
                     button[0].Text = "Edit";
                 }
                 else
                 {
                     form.Text = "Delete Encounter";
-                    var button = form.Controls.Find("_btnLoad", true);
                     button[0].Text = "Delete";
-                }                             
+                }
+                while (true)
+                {
+                    //Show form modally
+                    var result = form.ShowDialog(this);
+                    if (result != DialogResult.OK)
+                        return null;
 
-                //Show form modally
-                var result = form.ShowDialog(this);
-                if (result != DialogResult.OK)
-                    return null;
-
-                return form.Encounter;
-            }catch
+                    if (form.Encounter != null)
+                        return form.Encounter;
+                    else
+                        MessageBox.Show("No Encounter Selected");
+                }
+            } catch (Exception ex)
             {
-                //TODO: show correct error for correct situation
-                MessageBox.Show(this, "No Encounter Selected", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show(ex.Message);
                 return null;
-            }          
+            }
         }
 
         private void DeleteEncounter( Encounter encounter )

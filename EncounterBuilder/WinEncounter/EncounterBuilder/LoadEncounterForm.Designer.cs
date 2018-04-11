@@ -81,7 +81,7 @@
             this._btnLoad.TabIndex = 1;
             this._btnLoad.Text = "Load";
             this._btnLoad.UseVisualStyleBackColor = true;
-            this._btnLoad.Click += new System.EventHandler(this.OnButtonLoadClick);
+            this._btnLoad.Click += new System.EventHandler(this.OnButtonActionClick);
             // 
             // _btnCancel
             // 

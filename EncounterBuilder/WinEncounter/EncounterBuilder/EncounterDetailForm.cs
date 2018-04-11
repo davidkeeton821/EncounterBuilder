@@ -22,19 +22,6 @@ namespace EncounterBuilder
             InitializeComponent();
             Text = ("Edit Encounter");
             Encounter = encounter;
-
-            //IEnumerable<Character> characters = null;
-            //try
-            //{
-            //    characters = Encounter.Characters as IEnumerable<Character>;
-            //    characterBindingSource.DataSource = characters.ToList();
-            //} catch
-            //{
-            //    MessageBox.Show("Error loading characters");
-            //    return;
-            //}
-
-           // _dataGridViewCharacters.ClearSelection();
         }
 
         public Encounter Encounter { get; set; }
@@ -47,18 +34,13 @@ namespace EncounterBuilder
                 Name = _textName.Text,
                 Description = _textDescription.Text,
                 LastEdit = DateTime.Now,
-                Characters = _characters
+                Characters = charList
             };
 
             //return from form
             Encounter = encounter;
             DialogResult = DialogResult.OK;
             Close();
-        }
-
-        private void OnCancel( object sender, EventArgs e )
-        {
-            //DialogResult set to Cancel, no method needed
         }
 
         protected override void OnLoad( EventArgs e )
@@ -70,49 +52,23 @@ namespace EncounterBuilder
             {
                 _textName.Text = Encounter.Name;
                 _textDescription.Text = Encounter.Description;
-                _characters = Encounter.Characters;
+                charList = Encounter.Characters;
                 characterBindingSource.DataSource = Encounter.Characters;
             }
         }
 
-        //private Character GetCharacter( bool edit )
-        //{
-        //    try
-            //{
-
-            //    var form = new CharacterDetailForm()
-            //    {
-                    
-            //    };
-
-            //    var button = form.Controls.Find("_btnLoad", true);
-            //    if (edit)
-            //    {
-            //        form.Text = "Edit Encounter";
-            //        button[0].Text = "Edit";
-            //    } else
-            //    {
-            //        form.Text = "Delete Encounter";
-            //        button[0].Text = "Delete";
-            //    }
-            //    while (true)
-            //    {
-            //        //Show form modally
-            //        var result = form.ShowDialog(this);
-            //        if (result != DialogResult.OK)
-            //            return null;
-
-            //        if (form.Encounter != null)
-            //            return form.Encounter;
-            //        else
-            //            MessageBox.Show("No Encounter Selected");
-            //    }
-            //} catch (Exception ex)
-            //{
-            //    MessageBox.Show(ex.Message);
-            //    return null;
-            //}
-        //}
+        private Character GetCharacter()
+        {
+            try
+            {
+                var character = _dataGridViewCharacters.SelectedRows[0].DataBoundItem as Character;
+                return character;
+            } catch
+            {
+                MessageBox.Show("No Character Selected");
+                return null;
+            }
+        }
 
         private void OnCharacterAdd( object sender, EventArgs e )
         {
@@ -127,50 +83,52 @@ namespace EncounterBuilder
                 return;
 
             //"Add" the Character
-            _characters.Add(form.Character);
+            charList.Add(form.Character);
 
             RefreshUI();
         }       
 
         private void OnCharacterEdit( object sender, EventArgs e )
         {
+            var existing = GetCharacter();
             var form = new CharacterDetailForm
             {
-                Text = "Edit Character"
-                //Character = getCharacter();
+                Text = "Edit Character",
+                Character = existing
             };
 
             var result = form.ShowDialog(this);
             if (result != DialogResult.OK)
                 return;
 
-            //"Add" the Character
-            _characters.Add(form.Character);
+            //Update the Character
+            CopyCharacter(existing, form.Character);
 
             RefreshUI();
         }
 
+        private void CopyCharacter( Character existing, Character newChar )
+        {
+            var index = charList.IndexOf(existing);
+
+            charList.ElementAt(index).Name = newChar.Name;
+        }
+
         private void OnCharacterDelete( object sender, EventArgs e )
         {
-
-
             RefreshUI();
         }
 
         private void RefreshUI()
         {
-            List<Character> characters = new List<Character>();
             try
             {
-                characters = _characters;            
+                characterBindingSource.DataSource = charList.ToList();           
             } catch (Exception)
             {
                 MessageBox.Show("Error loading characters");
-            }
-
-            //Bind to grid
-            characterBindingSource.DataSource = characters?.ToList();
+            }           
         }
-        private List<Character> _characters = new List<Character>();
+        private List<Character> charList = new List<Character>();
     }
 }

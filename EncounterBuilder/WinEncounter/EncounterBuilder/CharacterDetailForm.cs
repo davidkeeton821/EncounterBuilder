@@ -17,6 +17,13 @@ namespace EncounterBuilder
             InitializeComponent();
         }
 
+        public CharacterDetailForm(Character character)
+        {
+            InitializeComponent();
+
+            _textName.Text = character.Name;
+        }
+
         public Character Character { get; set; }
 
         private void OnCharacterLoad( object sender, EventArgs e )
@@ -81,7 +88,7 @@ namespace EncounterBuilder
             //Create Encounter
             var character = new Character
             {
-                Name = _textName.Text,              
+                Name = _textName.Text,   
             };
 
             //return from form

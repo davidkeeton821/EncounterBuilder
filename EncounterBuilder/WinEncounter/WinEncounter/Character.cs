@@ -8,6 +8,8 @@ namespace EncounterBuilder
 {
     public class Character
     {
+        public int Id { get; set; }
+
         #region General Info
         /// <summary>Gets or sets the name.</summary>
         public string Name

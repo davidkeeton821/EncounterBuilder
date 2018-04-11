@@ -13,9 +13,20 @@ namespace EncounterBuilder
 {
     public partial class LoadEncounterForm : Form
     {
-        public LoadEncounterForm()
+        public LoadEncounterForm(bool edit)
         {
             InitializeComponent();
+            Edit = edit;
+            var button = Controls.Find("_btnLoad", true);
+            if (edit)
+            {
+                Text = "Edit Encounter";
+                button[0].Text = "Edit";
+            } else
+            {
+                Text = "Delete Encounter";
+                button[0].Text = "Delete";
+            }
         }
 
         protected override void OnLoad(EventArgs e)
@@ -40,13 +51,25 @@ namespace EncounterBuilder
         public IEncounterBuilderDatabase Source {get; set;}
 
         public Encounter Encounter { get; set; }
+        public bool Edit { get; set; }
 
-        private void OnButtonLoadClick(object sender, EventArgs e)
+        private void OnButtonActionClick(object sender, EventArgs e)
         {
             if (_dataGridViewLoadEncounter.SelectedRows.Count > 0)
             {
-                var encounter = _dataGridViewLoadEncounter.SelectedRows[0].DataBoundItem as Encounter;
-                Encounter = encounter;
+                if (Edit)
+                {
+                    var encounter = _dataGridViewLoadEncounter.SelectedRows[0].DataBoundItem as Encounter;
+                    Encounter = encounter;
+                }
+                else
+                {
+                    if (!ShowConfirmation("Are you sure?", "Remove Encounter"))                    
+                        return;
+
+                    var encounter = _dataGridViewLoadEncounter.SelectedRows[0].DataBoundItem as Encounter;
+                    Encounter = encounter;
+                }
             }           
         }
 
@@ -96,6 +119,11 @@ namespace EncounterBuilder
             //        direction == ListSortDirection.Ascending ?
             //        SortOrder.Ascending : SortOrder.Descending;
             //}
+        }
+
+        private bool ShowConfirmation( string message, string title )
+        {
+            return (MessageBox.Show(this, message, title, MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes);
         }
     }    
 }

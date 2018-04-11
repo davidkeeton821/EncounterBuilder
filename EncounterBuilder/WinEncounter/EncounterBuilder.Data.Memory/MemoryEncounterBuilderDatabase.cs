@@ -83,6 +83,7 @@ namespace EncounterBuilder.Data.Memory
             target.Name = source.Name;
             target.Description = source.Description;
             target.LastEdit = DateTime.Now;
+            target.Characters = source.Characters;
         }
  
         private readonly List<Encounter> _encounters = new List<Encounter>();

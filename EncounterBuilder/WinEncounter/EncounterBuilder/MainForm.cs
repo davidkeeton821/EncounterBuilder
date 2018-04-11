@@ -83,22 +83,11 @@ namespace EncounterBuilder
                 if (!source.Any())
                     throw new Exception("No Encounters To Show");
 
-                var form = new LoadEncounterForm()
+                var form = new LoadEncounterForm(edit)
                 {
                     Source = _database                
                 };
-
-                var button = form.Controls.Find("_btnLoad", true);
-                if (edit)
-                {
-                    form.Text = "Edit Encounter";                   
-                    button[0].Text = "Edit";
-                }
-                else
-                {
-                    form.Text = "Delete Encounter";
-                    button[0].Text = "Delete";
-                }
+               
                 while (true)
                 {
                     //Show form modally
@@ -108,7 +97,7 @@ namespace EncounterBuilder
 
                     if (form.Encounter != null)
                         return form.Encounter;
-                    else
+                    else if (form.Encounter == null && result != DialogResult.Cancel)
                         MessageBox.Show("No Encounter Selected");
                 }
             } catch (Exception ex)
@@ -119,10 +108,7 @@ namespace EncounterBuilder
         }
 
         private void DeleteEncounter( Encounter encounter )
-        {
-            if (!ShowConfirmation("Are you sure?", "Remove Encounter"))
-                return;
-
+        {           
             //Remove Encounter
             try
             {
@@ -156,11 +142,6 @@ namespace EncounterBuilder
         private void OnHelpAbout( object sender, EventArgs e )
         {
             MessageBox.Show(this, "Not Implemented", "Help About", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-        }
-
-        private bool ShowConfirmation( string message, string title )
-        {
-            return (MessageBox.Show(this, message, title, MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes);
         }
 
         private IEncounterBuilderDatabase _database;

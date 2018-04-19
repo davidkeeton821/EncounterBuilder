@@ -121,13 +121,15 @@
             this._checkIntSvThrwProf = new System.Windows.Forms.CheckBox();
             this._checkWisSvThrwProf = new System.Windows.Forms.CheckBox();
             this._checkChrSvThrwProf = new System.Windows.Forms.CheckBox();
+            this.checkBox1 = new System.Windows.Forms.CheckBox();
+            this.checkBox2 = new System.Windows.Forms.CheckBox();
             this.SuspendLayout();
             // 
             // _buttonCancel
             // 
             this._buttonCancel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this._buttonCancel.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this._buttonCancel.Location = new System.Drawing.Point(504, 457);
+            this._buttonCancel.Location = new System.Drawing.Point(740, 528);
             this._buttonCancel.Margin = new System.Windows.Forms.Padding(2);
             this._buttonCancel.Name = "_buttonCancel";
             this._buttonCancel.Size = new System.Drawing.Size(75, 23);
@@ -137,8 +139,6 @@
             // 
             // label1
             // 
-            this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.label1.AutoSize = true;
             this.label1.Location = new System.Drawing.Point(36, 9);
             this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
@@ -149,8 +149,6 @@
             // 
             // label2
             // 
-            this.label2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.label2.AutoSize = true;
             this.label2.Location = new System.Drawing.Point(38, 33);
             this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
@@ -163,7 +161,7 @@
             // 
             this.label3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(73, 83);
+            this.label3.Location = new System.Drawing.Point(367, 68);
             this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(22, 13);
@@ -174,7 +172,7 @@
             // 
             this.label4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(66, 109);
+            this.label4.Location = new System.Drawing.Point(360, 94);
             this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(29, 13);
@@ -185,7 +183,7 @@
             // 
             this.label5.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(192, 165);
+            this.label5.Location = new System.Drawing.Point(529, 258);
             this.label5.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(20, 13);
@@ -196,7 +194,7 @@
             // 
             this.label6.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(219, 165);
+            this.label6.Location = new System.Drawing.Point(556, 258);
             this.label6.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(26, 13);
@@ -207,7 +205,7 @@
             // 
             this.label7.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(250, 165);
+            this.label7.Location = new System.Drawing.Point(587, 258);
             this.label7.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(26, 13);
@@ -218,7 +216,7 @@
             // 
             this.label8.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(280, 165);
+            this.label8.Location = new System.Drawing.Point(617, 258);
             this.label8.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(19, 13);
@@ -229,7 +227,7 @@
             // 
             this.label9.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(308, 165);
+            this.label9.Location = new System.Drawing.Point(645, 258);
             this.label9.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(25, 13);
@@ -240,7 +238,7 @@
             // 
             this.label10.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(337, 165);
+            this.label10.Location = new System.Drawing.Point(674, 258);
             this.label10.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(23, 13);
@@ -249,28 +247,24 @@
             // 
             // _textName
             // 
-            this._textName.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this._textName.Location = new System.Drawing.Point(75, 6);
             this._textName.Margin = new System.Windows.Forms.Padding(2);
             this._textName.Name = "_textName";
-            this._textName.Size = new System.Drawing.Size(173, 20);
+            this._textName.Size = new System.Drawing.Size(176, 20);
             this._textName.TabIndex = 0;
             // 
             // _textRace
             // 
-            this._textRace.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this._textRace.Location = new System.Drawing.Point(75, 30);
             this._textRace.Margin = new System.Windows.Forms.Padding(2);
             this._textRace.Name = "_textRace";
-            this._textRace.Size = new System.Drawing.Size(136, 20);
+            this._textRace.Size = new System.Drawing.Size(139, 20);
             this._textRace.TabIndex = 3;
             // 
             // _textFixedHP
             // 
             this._textFixedHP.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this._textFixedHP.Location = new System.Drawing.Point(98, 83);
+            this._textFixedHP.Location = new System.Drawing.Point(392, 68);
             this._textFixedHP.Margin = new System.Windows.Forms.Padding(2);
             this._textFixedHP.MaxLength = 3;
             this._textFixedHP.Name = "_textFixedHP";
@@ -281,7 +275,7 @@
             // _textFixedTHP
             // 
             this._textFixedTHP.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this._textFixedTHP.Location = new System.Drawing.Point(98, 106);
+            this._textFixedTHP.Location = new System.Drawing.Point(392, 91);
             this._textFixedTHP.Margin = new System.Windows.Forms.Padding(2);
             this._textFixedTHP.MaxLength = 3;
             this._textFixedTHP.Name = "_textFixedTHP";
@@ -292,74 +286,79 @@
             // _textStrRaw
             // 
             this._textStrRaw.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this._textStrRaw.Location = new System.Drawing.Point(190, 180);
+            this._textStrRaw.Location = new System.Drawing.Point(527, 273);
             this._textStrRaw.Margin = new System.Windows.Forms.Padding(2);
             this._textStrRaw.MaxLength = 2;
             this._textStrRaw.Name = "_textStrRaw";
             this._textStrRaw.Size = new System.Drawing.Size(26, 20);
             this._textStrRaw.TabIndex = 25;
             this._textStrRaw.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this._textStrRaw.TextChanged += new System.EventHandler(this.OnRawStrengthValueEntered);
+            this._textStrRaw.TextChanged += new System.EventHandler(this.OnRawStrValueEntered);
             // 
             // _textDexRaw
             // 
             this._textDexRaw.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this._textDexRaw.Location = new System.Drawing.Point(219, 180);
+            this._textDexRaw.Location = new System.Drawing.Point(556, 273);
             this._textDexRaw.Margin = new System.Windows.Forms.Padding(2);
             this._textDexRaw.MaxLength = 2;
             this._textDexRaw.Name = "_textDexRaw";
             this._textDexRaw.Size = new System.Drawing.Size(26, 20);
             this._textDexRaw.TabIndex = 26;
             this._textDexRaw.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this._textDexRaw.TextChanged += new System.EventHandler(this.OnRawDexValueEntered);
             // 
             // _textConRaw
             // 
             this._textConRaw.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this._textConRaw.Location = new System.Drawing.Point(248, 180);
+            this._textConRaw.Location = new System.Drawing.Point(585, 273);
             this._textConRaw.Margin = new System.Windows.Forms.Padding(2);
             this._textConRaw.MaxLength = 2;
             this._textConRaw.Name = "_textConRaw";
             this._textConRaw.Size = new System.Drawing.Size(26, 20);
             this._textConRaw.TabIndex = 27;
             this._textConRaw.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this._textConRaw.TextChanged += new System.EventHandler(this.OnRawConValueEntered);
             // 
             // _textIntRaw
             // 
             this._textIntRaw.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this._textIntRaw.Location = new System.Drawing.Point(277, 180);
+            this._textIntRaw.Location = new System.Drawing.Point(614, 273);
             this._textIntRaw.Margin = new System.Windows.Forms.Padding(2);
             this._textIntRaw.MaxLength = 2;
             this._textIntRaw.Name = "_textIntRaw";
             this._textIntRaw.Size = new System.Drawing.Size(26, 20);
             this._textIntRaw.TabIndex = 28;
             this._textIntRaw.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this._textIntRaw.TextChanged += new System.EventHandler(this.OnRawIntValueEntered);
             // 
             // _textWisRaw
             // 
             this._textWisRaw.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this._textWisRaw.Location = new System.Drawing.Point(307, 180);
+            this._textWisRaw.Location = new System.Drawing.Point(644, 273);
             this._textWisRaw.Margin = new System.Windows.Forms.Padding(2);
             this._textWisRaw.MaxLength = 2;
             this._textWisRaw.Name = "_textWisRaw";
             this._textWisRaw.Size = new System.Drawing.Size(26, 20);
             this._textWisRaw.TabIndex = 29;
             this._textWisRaw.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this._textWisRaw.TextChanged += new System.EventHandler(this.OnRawWisValueEntered);
             // 
             // _textChrRaw
             // 
             this._textChrRaw.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this._textChrRaw.Location = new System.Drawing.Point(337, 180);
+            this._textChrRaw.Location = new System.Drawing.Point(674, 273);
             this._textChrRaw.Margin = new System.Windows.Forms.Padding(2);
             this._textChrRaw.MaxLength = 2;
             this._textChrRaw.Name = "_textChrRaw";
             this._textChrRaw.Size = new System.Drawing.Size(26, 20);
             this._textChrRaw.TabIndex = 30;
             this._textChrRaw.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this._textChrRaw.TextChanged += new System.EventHandler(this.OnRawChrValueEntered);
             // 
             // _textChrMod
             // 
             this._textChrMod.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this._textChrMod.Location = new System.Drawing.Point(337, 204);
+            this._textChrMod.Location = new System.Drawing.Point(674, 297);
             this._textChrMod.Margin = new System.Windows.Forms.Padding(2);
             this._textChrMod.Name = "_textChrMod";
             this._textChrMod.ReadOnly = true;
@@ -371,7 +370,7 @@
             // _textWisMod
             // 
             this._textWisMod.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this._textWisMod.Location = new System.Drawing.Point(307, 204);
+            this._textWisMod.Location = new System.Drawing.Point(644, 297);
             this._textWisMod.Margin = new System.Windows.Forms.Padding(2);
             this._textWisMod.Name = "_textWisMod";
             this._textWisMod.ReadOnly = true;
@@ -383,7 +382,7 @@
             // _textIntMod
             // 
             this._textIntMod.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this._textIntMod.Location = new System.Drawing.Point(277, 204);
+            this._textIntMod.Location = new System.Drawing.Point(614, 297);
             this._textIntMod.Margin = new System.Windows.Forms.Padding(2);
             this._textIntMod.Name = "_textIntMod";
             this._textIntMod.ReadOnly = true;
@@ -395,7 +394,7 @@
             // _textConMod
             // 
             this._textConMod.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this._textConMod.Location = new System.Drawing.Point(248, 204);
+            this._textConMod.Location = new System.Drawing.Point(585, 297);
             this._textConMod.Margin = new System.Windows.Forms.Padding(2);
             this._textConMod.Name = "_textConMod";
             this._textConMod.ReadOnly = true;
@@ -407,7 +406,7 @@
             // _textDexMod
             // 
             this._textDexMod.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this._textDexMod.Location = new System.Drawing.Point(219, 204);
+            this._textDexMod.Location = new System.Drawing.Point(556, 297);
             this._textDexMod.Margin = new System.Windows.Forms.Padding(2);
             this._textDexMod.Name = "_textDexMod";
             this._textDexMod.ReadOnly = true;
@@ -419,7 +418,7 @@
             // _textStrMod
             // 
             this._textStrMod.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this._textStrMod.Location = new System.Drawing.Point(190, 204);
+            this._textStrMod.Location = new System.Drawing.Point(527, 297);
             this._textStrMod.Margin = new System.Windows.Forms.Padding(2);
             this._textStrMod.Name = "_textStrMod";
             this._textStrMod.ReadOnly = true;
@@ -432,7 +431,7 @@
             // 
             this.label11.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(48, 152);
+            this.label11.Location = new System.Drawing.Point(100, 167);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(21, 13);
             this.label11.TabIndex = 30;
@@ -441,7 +440,7 @@
             // _textAC
             // 
             this._textAC.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this._textAC.Location = new System.Drawing.Point(75, 149);
+            this._textAC.Location = new System.Drawing.Point(127, 164);
             this._textAC.MaxLength = 2;
             this._textAC.Name = "_textAC";
             this._textAC.Size = new System.Drawing.Size(43, 20);
@@ -452,7 +451,7 @@
             // 
             this.label12.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(32, 182);
+            this.label12.Location = new System.Drawing.Point(84, 197);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(38, 13);
             this.label12.TabIndex = 32;
@@ -461,7 +460,7 @@
             // _textSpeed
             // 
             this._textSpeed.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this._textSpeed.Location = new System.Drawing.Point(75, 179);
+            this._textSpeed.Location = new System.Drawing.Point(127, 194);
             this._textSpeed.MaxLength = 3;
             this._textSpeed.Name = "_textSpeed";
             this._textSpeed.Size = new System.Drawing.Size(43, 20);
@@ -472,7 +471,7 @@
             // 
             this.label13.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.label13.AutoSize = true;
-            this.label13.Location = new System.Drawing.Point(119, 182);
+            this.label13.Location = new System.Drawing.Point(171, 197);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(19, 13);
             this.label13.TabIndex = 34;
@@ -482,7 +481,7 @@
             // 
             this.label14.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.label14.AutoSize = true;
-            this.label14.Location = new System.Drawing.Point(154, 183);
+            this.label14.Location = new System.Drawing.Point(491, 276);
             this.label14.Name = "label14";
             this.label14.Size = new System.Drawing.Size(32, 13);
             this.label14.TabIndex = 35;
@@ -492,7 +491,7 @@
             // 
             this.label15.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.label15.AutoSize = true;
-            this.label15.Location = new System.Drawing.Point(155, 207);
+            this.label15.Location = new System.Drawing.Point(492, 300);
             this.label15.Name = "label15";
             this.label15.Size = new System.Drawing.Size(31, 13);
             this.label15.TabIndex = 36;
@@ -502,7 +501,7 @@
             // 
             this.label16.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.label16.AutoSize = true;
-            this.label16.Location = new System.Drawing.Point(9, 208);
+            this.label16.Location = new System.Drawing.Point(61, 223);
             this.label16.Name = "label16";
             this.label16.Size = new System.Drawing.Size(62, 13);
             this.label16.TabIndex = 37;
@@ -511,7 +510,7 @@
             // textBox19
             // 
             this.textBox19.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.textBox19.Location = new System.Drawing.Point(75, 205);
+            this.textBox19.Location = new System.Drawing.Point(127, 220);
             this.textBox19.MaxLength = 2;
             this.textBox19.Name = "textBox19";
             this.textBox19.Size = new System.Drawing.Size(43, 20);
@@ -522,7 +521,7 @@
             // 
             this.label17.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.label17.AutoSize = true;
-            this.label17.Location = new System.Drawing.Point(23, 251);
+            this.label17.Location = new System.Drawing.Point(477, 333);
             this.label17.Name = "label17";
             this.label17.Size = new System.Drawing.Size(47, 13);
             this.label17.TabIndex = 39;
@@ -532,7 +531,7 @@
             // 
             this.label24.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.label24.AutoSize = true;
-            this.label24.Location = new System.Drawing.Point(17, 289);
+            this.label24.Location = new System.Drawing.Point(61, 319);
             this.label24.Name = "label24";
             this.label24.Size = new System.Drawing.Size(51, 13);
             this.label24.TabIndex = 53;
@@ -542,7 +541,7 @@
             // 
             this.label26.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.label26.AutoSize = true;
-            this.label26.Location = new System.Drawing.Point(47, 457);
+            this.label26.Location = new System.Drawing.Point(491, 33);
             this.label26.Name = "label26";
             this.label26.Size = new System.Drawing.Size(22, 13);
             this.label26.TabIndex = 55;
@@ -551,7 +550,7 @@
             // _textChallengeRating
             // 
             this._textChallengeRating.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this._textChallengeRating.Location = new System.Drawing.Point(74, 454);
+            this._textChallengeRating.Location = new System.Drawing.Point(518, 30);
             this._textChallengeRating.MaxLength = 2;
             this._textChallengeRating.Name = "_textChallengeRating";
             this._textChallengeRating.Size = new System.Drawing.Size(37, 20);
@@ -560,7 +559,7 @@
             // textBox27
             // 
             this.textBox27.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.textBox27.Location = new System.Drawing.Point(116, 454);
+            this.textBox27.Location = new System.Drawing.Point(560, 30);
             this.textBox27.Name = "textBox27";
             this.textBox27.ReadOnly = true;
             this.textBox27.Size = new System.Drawing.Size(100, 20);
@@ -570,7 +569,7 @@
             // _buttonSave
             // 
             this._buttonSave.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this._buttonSave.Location = new System.Drawing.Point(419, 457);
+            this._buttonSave.Location = new System.Drawing.Point(655, 528);
             this._buttonSave.Name = "_buttonSave";
             this._buttonSave.Size = new System.Drawing.Size(75, 23);
             this._buttonSave.TabIndex = 56;
@@ -583,7 +582,7 @@
             this._textProfBonus.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this._textProfBonus.AutoSize = true;
             this._textProfBonus.BackColor = System.Drawing.Color.White;
-            this._textProfBonus.Location = new System.Drawing.Point(81, 208);
+            this._textProfBonus.Location = new System.Drawing.Point(133, 223);
             this._textProfBonus.Margin = new System.Windows.Forms.Padding(0);
             this._textProfBonus.Name = "_textProfBonus";
             this._textProfBonus.Size = new System.Drawing.Size(13, 13);
@@ -592,8 +591,6 @@
             // 
             // label28
             // 
-            this.label28.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.label28.AutoSize = true;
             this.label28.Location = new System.Drawing.Point(253, 9);
             this.label28.Name = "label28";
@@ -603,27 +600,21 @@
             // 
             // _textClass
             // 
-            this._textClass.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this._textClass.Location = new System.Drawing.Point(291, 6);
             this._textClass.Name = "_textClass";
-            this._textClass.Size = new System.Drawing.Size(100, 20);
+            this._textClass.Size = new System.Drawing.Size(103, 20);
             this._textClass.TabIndex = 1;
             // 
             // _textLevel
             // 
-            this._textLevel.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this._textLevel.Location = new System.Drawing.Point(433, 30);
             this._textLevel.MaxLength = 2;
             this._textLevel.Name = "_textLevel";
-            this._textLevel.Size = new System.Drawing.Size(36, 20);
+            this._textLevel.Size = new System.Drawing.Size(39, 20);
             this._textLevel.TabIndex = 5;
             // 
             // label29
             // 
-            this.label29.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.label29.AutoSize = true;
             this.label29.Location = new System.Drawing.Point(394, 33);
             this.label29.Name = "label29";
@@ -633,18 +624,14 @@
             // 
             // _textAlignment
             // 
-            this._textAlignment.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this._textAlignment.Location = new System.Drawing.Point(272, 30);
             this._textAlignment.Margin = new System.Windows.Forms.Padding(2);
             this._textAlignment.Name = "_textAlignment";
-            this._textAlignment.Size = new System.Drawing.Size(119, 20);
+            this._textAlignment.Size = new System.Drawing.Size(122, 20);
             this._textAlignment.TabIndex = 4;
             // 
             // label30
             // 
-            this.label30.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.label30.AutoSize = true;
             this.label30.Location = new System.Drawing.Point(215, 33);
             this.label30.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
@@ -655,18 +642,14 @@
             // 
             // _textExp
             // 
-            this._textExp.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this._textExp.Location = new System.Drawing.Point(433, 6);
             this._textExp.Margin = new System.Windows.Forms.Padding(2);
             this._textExp.Name = "_textExp";
-            this._textExp.Size = new System.Drawing.Size(119, 20);
+            this._textExp.Size = new System.Drawing.Size(122, 20);
             this._textExp.TabIndex = 2;
             // 
             // label31
             // 
-            this.label31.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.label31.AutoSize = true;
             this.label31.Location = new System.Drawing.Point(402, 9);
             this.label31.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
@@ -680,7 +663,7 @@
             this._radioFixed.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this._radioFixed.AutoSize = true;
             this._radioFixed.Checked = true;
-            this._radioFixed.Location = new System.Drawing.Point(12, 95);
+            this._radioFixed.Location = new System.Drawing.Point(306, 80);
             this._radioFixed.Name = "_radioFixed";
             this._radioFixed.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this._radioFixed.Size = new System.Drawing.Size(50, 17);
@@ -694,7 +677,7 @@
             // 
             this._radioRandom.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this._radioRandom.AutoSize = true;
-            this._radioRandom.Location = new System.Drawing.Point(182, 95);
+            this._radioRandom.Location = new System.Drawing.Point(291, 137);
             this._radioRandom.Name = "_radioRandom";
             this._radioRandom.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this._radioRandom.Size = new System.Drawing.Size(65, 17);
@@ -706,7 +689,7 @@
             // _textNumOfDiceHP
             // 
             this._textNumOfDiceHP.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this._textNumOfDiceHP.Location = new System.Drawing.Point(281, 89);
+            this._textNumOfDiceHP.Location = new System.Drawing.Point(390, 131);
             this._textNumOfDiceHP.Name = "_textNumOfDiceHP";
             this._textNumOfDiceHP.Size = new System.Drawing.Size(22, 20);
             this._textNumOfDiceHP.TabIndex = 10;
@@ -716,7 +699,7 @@
             this.label32.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.label32.AutoSize = true;
             this.label32.BackColor = System.Drawing.SystemColors.Control;
-            this.label32.Location = new System.Drawing.Point(314, 92);
+            this.label32.Location = new System.Drawing.Point(423, 134);
             this.label32.Margin = new System.Windows.Forms.Padding(0);
             this.label32.Name = "label32";
             this.label32.Size = new System.Drawing.Size(13, 13);
@@ -726,7 +709,7 @@
             // _textDieSizeHP
             // 
             this._textDieSizeHP.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this._textDieSizeHP.Location = new System.Drawing.Point(329, 89);
+            this._textDieSizeHP.Location = new System.Drawing.Point(438, 131);
             this._textDieSizeHP.Name = "_textDieSizeHP";
             this._textDieSizeHP.Size = new System.Drawing.Size(29, 20);
             this._textDieSizeHP.TabIndex = 12;
@@ -739,7 +722,7 @@
             "/",
             "K",
             "L"});
-            this._listBoxKeepLowHP.Location = new System.Drawing.Point(364, 70);
+            this._listBoxKeepLowHP.Location = new System.Drawing.Point(473, 112);
             this._listBoxKeepLowHP.Name = "_listBoxKeepLowHP";
             this._listBoxKeepLowHP.ScrollAlwaysVisible = true;
             this._listBoxKeepLowHP.Size = new System.Drawing.Size(37, 30);
@@ -748,7 +731,7 @@
             // _textNumOfKeepLowHP
             // 
             this._textNumOfKeepLowHP.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this._textNumOfKeepLowHP.Location = new System.Drawing.Point(407, 90);
+            this._textNumOfKeepLowHP.Location = new System.Drawing.Point(516, 132);
             this._textNumOfKeepLowHP.Name = "_textNumOfKeepLowHP";
             this._textNumOfKeepLowHP.Size = new System.Drawing.Size(34, 20);
             this._textNumOfKeepLowHP.TabIndex = 16;
@@ -760,7 +743,7 @@
             this._listBoxPlusMinusHP.Items.AddRange(new object[] {
             "+",
             "-"});
-            this._listBoxPlusMinusHP.Location = new System.Drawing.Point(447, 86);
+            this._listBoxPlusMinusHP.Location = new System.Drawing.Point(556, 128);
             this._listBoxPlusMinusHP.Name = "_listBoxPlusMinusHP";
             this._listBoxPlusMinusHP.Size = new System.Drawing.Size(18, 30);
             this._listBoxPlusMinusHP.TabIndex = 18;
@@ -768,7 +751,7 @@
             // _textModNumHP
             // 
             this._textModNumHP.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this._textModNumHP.Location = new System.Drawing.Point(471, 89);
+            this._textModNumHP.Location = new System.Drawing.Point(580, 131);
             this._textModNumHP.Name = "_textModNumHP";
             this._textModNumHP.Size = new System.Drawing.Size(22, 20);
             this._textModNumHP.TabIndex = 20;
@@ -776,7 +759,7 @@
             // _textModNumTHP
             // 
             this._textModNumTHP.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this._textModNumTHP.Location = new System.Drawing.Point(471, 115);
+            this._textModNumTHP.Location = new System.Drawing.Point(580, 157);
             this._textModNumTHP.Name = "_textModNumTHP";
             this._textModNumTHP.Size = new System.Drawing.Size(22, 20);
             this._textModNumTHP.TabIndex = 21;
@@ -788,7 +771,7 @@
             this._listBoxPlusMinusTHP.Items.AddRange(new object[] {
             "+",
             "-"});
-            this._listBoxPlusMinusTHP.Location = new System.Drawing.Point(447, 119);
+            this._listBoxPlusMinusTHP.Location = new System.Drawing.Point(556, 161);
             this._listBoxPlusMinusTHP.Name = "_listBoxPlusMinusTHP";
             this._listBoxPlusMinusTHP.Size = new System.Drawing.Size(18, 30);
             this._listBoxPlusMinusTHP.TabIndex = 19;
@@ -796,7 +779,7 @@
             // _textNumOfKeepLowTHP
             // 
             this._textNumOfKeepLowTHP.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this._textNumOfKeepLowTHP.Location = new System.Drawing.Point(407, 116);
+            this._textNumOfKeepLowTHP.Location = new System.Drawing.Point(516, 158);
             this._textNumOfKeepLowTHP.Name = "_textNumOfKeepLowTHP";
             this._textNumOfKeepLowTHP.Size = new System.Drawing.Size(34, 20);
             this._textNumOfKeepLowTHP.TabIndex = 17;
@@ -809,7 +792,7 @@
             "/",
             "K",
             "L"});
-            this._listBoxKeepLowTHP.Location = new System.Drawing.Point(364, 115);
+            this._listBoxKeepLowTHP.Location = new System.Drawing.Point(473, 157);
             this._listBoxKeepLowTHP.Name = "_listBoxKeepLowTHP";
             this._listBoxKeepLowTHP.ScrollAlwaysVisible = true;
             this._listBoxKeepLowTHP.Size = new System.Drawing.Size(37, 30);
@@ -818,7 +801,7 @@
             // _textDieSizeTHP
             // 
             this._textDieSizeTHP.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this._textDieSizeTHP.Location = new System.Drawing.Point(329, 115);
+            this._textDieSizeTHP.Location = new System.Drawing.Point(438, 157);
             this._textDieSizeTHP.Name = "_textDieSizeTHP";
             this._textDieSizeTHP.Size = new System.Drawing.Size(29, 20);
             this._textDieSizeTHP.TabIndex = 13;
@@ -827,7 +810,7 @@
             // 
             this.label33.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.label33.AutoSize = true;
-            this.label33.Location = new System.Drawing.Point(317, 117);
+            this.label33.Location = new System.Drawing.Point(426, 159);
             this.label33.Name = "label33";
             this.label33.Size = new System.Drawing.Size(13, 13);
             this.label33.TabIndex = 80;
@@ -836,7 +819,7 @@
             // _textNumOfDiceTHP
             // 
             this._textNumOfDiceTHP.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this._textNumOfDiceTHP.Location = new System.Drawing.Point(281, 115);
+            this._textNumOfDiceTHP.Location = new System.Drawing.Point(390, 157);
             this._textNumOfDiceTHP.Name = "_textNumOfDiceTHP";
             this._textNumOfDiceTHP.Size = new System.Drawing.Size(22, 20);
             this._textNumOfDiceTHP.TabIndex = 11;
@@ -845,7 +828,7 @@
             // 
             this.label34.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.label34.AutoSize = true;
-            this.label34.Location = new System.Drawing.Point(249, 117);
+            this.label34.Location = new System.Drawing.Point(358, 159);
             this.label34.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label34.Name = "label34";
             this.label34.Size = new System.Drawing.Size(29, 13);
@@ -856,7 +839,7 @@
             // 
             this.label35.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.label35.AutoSize = true;
-            this.label35.Location = new System.Drawing.Point(256, 91);
+            this.label35.Location = new System.Drawing.Point(365, 133);
             this.label35.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label35.Name = "label35";
             this.label35.Size = new System.Drawing.Size(22, 13);
@@ -867,198 +850,216 @@
             // 
             this._checkAcrobaticsProf.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this._checkAcrobaticsProf.AutoSize = true;
-            this._checkAcrobaticsProf.Location = new System.Drawing.Point(74, 289);
+            this._checkAcrobaticsProf.Location = new System.Drawing.Point(117, 315);
             this._checkAcrobaticsProf.Name = "_checkAcrobaticsProf";
             this._checkAcrobaticsProf.Size = new System.Drawing.Size(76, 17);
             this._checkAcrobaticsProf.TabIndex = 37;
             this._checkAcrobaticsProf.Text = "Acrobatics";
+            this._checkAcrobaticsProf.ThreeState = true;
             this._checkAcrobaticsProf.UseVisualStyleBackColor = true;
             // 
             // _checkAnimalHandlingProf
             // 
             this._checkAnimalHandlingProf.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this._checkAnimalHandlingProf.AutoSize = true;
-            this._checkAnimalHandlingProf.Location = new System.Drawing.Point(74, 314);
+            this._checkAnimalHandlingProf.Location = new System.Drawing.Point(118, 344);
             this._checkAnimalHandlingProf.Name = "_checkAnimalHandlingProf";
             this._checkAnimalHandlingProf.Size = new System.Drawing.Size(102, 17);
             this._checkAnimalHandlingProf.TabIndex = 38;
             this._checkAnimalHandlingProf.Text = "Animal Handling";
+            this._checkAnimalHandlingProf.ThreeState = true;
             this._checkAnimalHandlingProf.UseVisualStyleBackColor = true;
             // 
             // _checkArcanaProf
             // 
             this._checkArcanaProf.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this._checkArcanaProf.AutoSize = true;
-            this._checkArcanaProf.Location = new System.Drawing.Point(74, 338);
+            this._checkArcanaProf.Location = new System.Drawing.Point(118, 368);
             this._checkArcanaProf.Name = "_checkArcanaProf";
             this._checkArcanaProf.Size = new System.Drawing.Size(60, 17);
             this._checkArcanaProf.TabIndex = 39;
             this._checkArcanaProf.Text = "Arcana";
+            this._checkArcanaProf.ThreeState = true;
             this._checkArcanaProf.UseVisualStyleBackColor = true;
             // 
             // _checkInvestigationProf
             // 
             this._checkInvestigationProf.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this._checkInvestigationProf.AutoSize = true;
-            this._checkInvestigationProf.Location = new System.Drawing.Point(178, 338);
+            this._checkInvestigationProf.Location = new System.Drawing.Point(222, 368);
             this._checkInvestigationProf.Name = "_checkInvestigationProf";
             this._checkInvestigationProf.Size = new System.Drawing.Size(86, 17);
             this._checkInvestigationProf.TabIndex = 45;
             this._checkInvestigationProf.Text = "Investigation";
+            this._checkInvestigationProf.ThreeState = true;
             this._checkInvestigationProf.UseVisualStyleBackColor = true;
             // 
             // _checkIntimidationProf
             // 
             this._checkIntimidationProf.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this._checkIntimidationProf.AutoSize = true;
-            this._checkIntimidationProf.Location = new System.Drawing.Point(178, 314);
+            this._checkIntimidationProf.Location = new System.Drawing.Point(222, 344);
             this._checkIntimidationProf.Name = "_checkIntimidationProf";
             this._checkIntimidationProf.Size = new System.Drawing.Size(79, 17);
             this._checkIntimidationProf.TabIndex = 44;
             this._checkIntimidationProf.Text = "Intimidation";
+            this._checkIntimidationProf.ThreeState = true;
             this._checkIntimidationProf.UseVisualStyleBackColor = true;
             // 
             // _checkInsightProf
             // 
             this._checkInsightProf.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this._checkInsightProf.AutoSize = true;
-            this._checkInsightProf.Location = new System.Drawing.Point(178, 289);
+            this._checkInsightProf.Location = new System.Drawing.Point(222, 319);
             this._checkInsightProf.Name = "_checkInsightProf";
             this._checkInsightProf.Size = new System.Drawing.Size(57, 17);
             this._checkInsightProf.TabIndex = 43;
             this._checkInsightProf.Text = "Insight";
+            this._checkInsightProf.ThreeState = true;
             this._checkInsightProf.UseVisualStyleBackColor = true;
             // 
             // _checkReligionProf
             // 
             this._checkReligionProf.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this._checkReligionProf.AutoSize = true;
-            this._checkReligionProf.Location = new System.Drawing.Point(266, 338);
+            this._checkReligionProf.Location = new System.Drawing.Point(310, 368);
             this._checkReligionProf.Name = "_checkReligionProf";
             this._checkReligionProf.Size = new System.Drawing.Size(64, 17);
             this._checkReligionProf.TabIndex = 51;
             this._checkReligionProf.Text = "Religion";
+            this._checkReligionProf.ThreeState = true;
             this._checkReligionProf.UseVisualStyleBackColor = true;
             // 
             // _checkPersuasionProf
             // 
             this._checkPersuasionProf.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this._checkPersuasionProf.AutoSize = true;
-            this._checkPersuasionProf.Location = new System.Drawing.Point(266, 314);
+            this._checkPersuasionProf.Location = new System.Drawing.Point(310, 344);
             this._checkPersuasionProf.Name = "_checkPersuasionProf";
             this._checkPersuasionProf.Size = new System.Drawing.Size(78, 17);
             this._checkPersuasionProf.TabIndex = 50;
             this._checkPersuasionProf.Text = "Persuasion";
+            this._checkPersuasionProf.ThreeState = true;
             this._checkPersuasionProf.UseVisualStyleBackColor = true;
             // 
             // _checkPerformanceProf
             // 
             this._checkPerformanceProf.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this._checkPerformanceProf.AutoSize = true;
-            this._checkPerformanceProf.Location = new System.Drawing.Point(266, 289);
+            this._checkPerformanceProf.Location = new System.Drawing.Point(310, 319);
             this._checkPerformanceProf.Name = "_checkPerformanceProf";
             this._checkPerformanceProf.Size = new System.Drawing.Size(86, 17);
             this._checkPerformanceProf.TabIndex = 49;
             this._checkPerformanceProf.Text = "Performance";
+            this._checkPerformanceProf.ThreeState = true;
             this._checkPerformanceProf.UseVisualStyleBackColor = true;
             // 
             // _checkSurvivalProf
             // 
             this._checkSurvivalProf.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this._checkSurvivalProf.AutoSize = true;
-            this._checkSurvivalProf.Location = new System.Drawing.Point(266, 411);
+            this._checkSurvivalProf.Location = new System.Drawing.Point(310, 441);
             this._checkSurvivalProf.Name = "_checkSurvivalProf";
             this._checkSurvivalProf.Size = new System.Drawing.Size(64, 17);
             this._checkSurvivalProf.TabIndex = 54;
             this._checkSurvivalProf.Text = "Survival";
+            this._checkSurvivalProf.ThreeState = true;
             this._checkSurvivalProf.UseVisualStyleBackColor = true;
             // 
             // _checkStealthProf
             // 
             this._checkStealthProf.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this._checkStealthProf.AutoSize = true;
-            this._checkStealthProf.Location = new System.Drawing.Point(266, 387);
+            this._checkStealthProf.Location = new System.Drawing.Point(310, 417);
             this._checkStealthProf.Name = "_checkStealthProf";
             this._checkStealthProf.Size = new System.Drawing.Size(59, 17);
             this._checkStealthProf.TabIndex = 53;
             this._checkStealthProf.Text = "Stealth";
+            this._checkStealthProf.ThreeState = true;
             this._checkStealthProf.UseVisualStyleBackColor = true;
             // 
             // _checkSleightOfHandProf
             // 
             this._checkSleightOfHandProf.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this._checkSleightOfHandProf.AutoSize = true;
-            this._checkSleightOfHandProf.Location = new System.Drawing.Point(266, 362);
+            this._checkSleightOfHandProf.Location = new System.Drawing.Point(310, 392);
             this._checkSleightOfHandProf.Name = "_checkSleightOfHandProf";
             this._checkSleightOfHandProf.Size = new System.Drawing.Size(99, 17);
             this._checkSleightOfHandProf.TabIndex = 52;
             this._checkSleightOfHandProf.Text = "Sleight of Hand";
+            this._checkSleightOfHandProf.ThreeState = true;
             this._checkSleightOfHandProf.UseVisualStyleBackColor = true;
             // 
             // _checkPerceptionProf
             // 
             this._checkPerceptionProf.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this._checkPerceptionProf.AutoSize = true;
-            this._checkPerceptionProf.Location = new System.Drawing.Point(178, 411);
+            this._checkPerceptionProf.Location = new System.Drawing.Point(222, 441);
             this._checkPerceptionProf.Name = "_checkPerceptionProf";
             this._checkPerceptionProf.Size = new System.Drawing.Size(77, 17);
             this._checkPerceptionProf.TabIndex = 48;
             this._checkPerceptionProf.Text = "Perception";
+            this._checkPerceptionProf.ThreeState = true;
             this._checkPerceptionProf.UseVisualStyleBackColor = true;
             // 
             // _checkNatureProf
             // 
             this._checkNatureProf.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this._checkNatureProf.AutoSize = true;
-            this._checkNatureProf.Location = new System.Drawing.Point(178, 387);
+            this._checkNatureProf.Location = new System.Drawing.Point(222, 417);
             this._checkNatureProf.Name = "_checkNatureProf";
             this._checkNatureProf.Size = new System.Drawing.Size(58, 17);
             this._checkNatureProf.TabIndex = 47;
             this._checkNatureProf.Text = "Nature";
+            this._checkNatureProf.ThreeState = true;
             this._checkNatureProf.UseVisualStyleBackColor = true;
             // 
             // _checkMedicineProf
             // 
             this._checkMedicineProf.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this._checkMedicineProf.AutoSize = true;
-            this._checkMedicineProf.Location = new System.Drawing.Point(178, 362);
+            this._checkMedicineProf.Location = new System.Drawing.Point(222, 392);
             this._checkMedicineProf.Name = "_checkMedicineProf";
             this._checkMedicineProf.Size = new System.Drawing.Size(69, 17);
             this._checkMedicineProf.TabIndex = 46;
             this._checkMedicineProf.Text = "Medicine";
+            this._checkMedicineProf.ThreeState = true;
             this._checkMedicineProf.UseVisualStyleBackColor = true;
             // 
             // _checkHistoryProf
             // 
             this._checkHistoryProf.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this._checkHistoryProf.AutoSize = true;
-            this._checkHistoryProf.Location = new System.Drawing.Point(74, 411);
+            this._checkHistoryProf.Location = new System.Drawing.Point(118, 441);
             this._checkHistoryProf.Name = "_checkHistoryProf";
             this._checkHistoryProf.Size = new System.Drawing.Size(58, 17);
             this._checkHistoryProf.TabIndex = 42;
             this._checkHistoryProf.Text = "History";
+            this._checkHistoryProf.ThreeState = true;
             this._checkHistoryProf.UseVisualStyleBackColor = true;
             // 
             // _checkDeceptionProf
             // 
             this._checkDeceptionProf.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this._checkDeceptionProf.AutoSize = true;
-            this._checkDeceptionProf.Location = new System.Drawing.Point(74, 387);
+            this._checkDeceptionProf.Location = new System.Drawing.Point(118, 417);
             this._checkDeceptionProf.Name = "_checkDeceptionProf";
             this._checkDeceptionProf.Size = new System.Drawing.Size(75, 17);
             this._checkDeceptionProf.TabIndex = 41;
             this._checkDeceptionProf.Text = "Deception";
+            this._checkDeceptionProf.ThreeState = true;
             this._checkDeceptionProf.UseVisualStyleBackColor = true;
             // 
             // _checkAthleticsProf
             // 
             this._checkAthleticsProf.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this._checkAthleticsProf.AutoSize = true;
-            this._checkAthleticsProf.Location = new System.Drawing.Point(74, 362);
+            this._checkAthleticsProf.Location = new System.Drawing.Point(118, 392);
             this._checkAthleticsProf.Name = "_checkAthleticsProf";
             this._checkAthleticsProf.Size = new System.Drawing.Size(66, 17);
             this._checkAthleticsProf.TabIndex = 40;
             this._checkAthleticsProf.Text = "Athletics";
+            this._checkAthleticsProf.ThreeState = true;
             this._checkAthleticsProf.UseVisualStyleBackColor = true;
             // 
             // _checkStrSvThrwProf
@@ -1066,7 +1067,7 @@
             this._checkStrSvThrwProf.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this._checkStrSvThrwProf.AutoSize = true;
             this._checkStrSvThrwProf.CheckAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this._checkStrSvThrwProf.Location = new System.Drawing.Point(75, 243);
+            this._checkStrSvThrwProf.Location = new System.Drawing.Point(529, 325);
             this._checkStrSvThrwProf.Margin = new System.Windows.Forms.Padding(2);
             this._checkStrSvThrwProf.Name = "_checkStrSvThrwProf";
             this._checkStrSvThrwProf.Size = new System.Drawing.Size(24, 31);
@@ -1080,7 +1081,7 @@
             this._checkDexSvThrwProf.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this._checkDexSvThrwProf.AutoSize = true;
             this._checkDexSvThrwProf.CheckAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this._checkDexSvThrwProf.Location = new System.Drawing.Point(103, 243);
+            this._checkDexSvThrwProf.Location = new System.Drawing.Point(557, 325);
             this._checkDexSvThrwProf.Margin = new System.Windows.Forms.Padding(2);
             this._checkDexSvThrwProf.Name = "_checkDexSvThrwProf";
             this._checkDexSvThrwProf.Size = new System.Drawing.Size(30, 31);
@@ -1093,7 +1094,7 @@
             this._checkConSvThrwProf.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this._checkConSvThrwProf.AutoSize = true;
             this._checkConSvThrwProf.CheckAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this._checkConSvThrwProf.Location = new System.Drawing.Point(134, 243);
+            this._checkConSvThrwProf.Location = new System.Drawing.Point(588, 325);
             this._checkConSvThrwProf.Margin = new System.Windows.Forms.Padding(2);
             this._checkConSvThrwProf.Name = "_checkConSvThrwProf";
             this._checkConSvThrwProf.Size = new System.Drawing.Size(30, 31);
@@ -1106,7 +1107,7 @@
             this._checkIntSvThrwProf.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this._checkIntSvThrwProf.AutoSize = true;
             this._checkIntSvThrwProf.CheckAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this._checkIntSvThrwProf.Location = new System.Drawing.Point(166, 243);
+            this._checkIntSvThrwProf.Location = new System.Drawing.Point(620, 325);
             this._checkIntSvThrwProf.Margin = new System.Windows.Forms.Padding(2);
             this._checkIntSvThrwProf.Name = "_checkIntSvThrwProf";
             this._checkIntSvThrwProf.Size = new System.Drawing.Size(23, 31);
@@ -1119,7 +1120,7 @@
             this._checkWisSvThrwProf.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this._checkWisSvThrwProf.AutoSize = true;
             this._checkWisSvThrwProf.CheckAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this._checkWisSvThrwProf.Location = new System.Drawing.Point(191, 243);
+            this._checkWisSvThrwProf.Location = new System.Drawing.Point(645, 325);
             this._checkWisSvThrwProf.Margin = new System.Windows.Forms.Padding(2);
             this._checkWisSvThrwProf.Name = "_checkWisSvThrwProf";
             this._checkWisSvThrwProf.Size = new System.Drawing.Size(29, 31);
@@ -1132,7 +1133,7 @@
             this._checkChrSvThrwProf.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this._checkChrSvThrwProf.AutoSize = true;
             this._checkChrSvThrwProf.CheckAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this._checkChrSvThrwProf.Location = new System.Drawing.Point(222, 243);
+            this._checkChrSvThrwProf.Location = new System.Drawing.Point(676, 325);
             this._checkChrSvThrwProf.Margin = new System.Windows.Forms.Padding(2);
             this._checkChrSvThrwProf.Name = "_checkChrSvThrwProf";
             this._checkChrSvThrwProf.Size = new System.Drawing.Size(27, 31);
@@ -1140,12 +1141,44 @@
             this._checkChrSvThrwProf.Text = "Chr";
             this._checkChrSvThrwProf.UseVisualStyleBackColor = true;
             // 
+            // checkBox1
+            // 
+            this.checkBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.checkBox1.AutoCheck = false;
+            this.checkBox1.AutoSize = true;
+            this.checkBox1.Checked = true;
+            this.checkBox1.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.checkBox1.Location = new System.Drawing.Point(117, 276);
+            this.checkBox1.Name = "checkBox1";
+            this.checkBox1.Size = new System.Drawing.Size(114, 17);
+            this.checkBox1.TabIndex = 90;
+            this.checkBox1.Text = "Normal Proficiency";
+            this.checkBox1.ThreeState = true;
+            this.checkBox1.UseVisualStyleBackColor = true;
+            // 
+            // checkBox2
+            // 
+            this.checkBox2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.checkBox2.AutoCheck = false;
+            this.checkBox2.AutoSize = true;
+            this.checkBox2.Checked = true;
+            this.checkBox2.CheckState = System.Windows.Forms.CheckState.Indeterminate;
+            this.checkBox2.Location = new System.Drawing.Point(237, 276);
+            this.checkBox2.Name = "checkBox2";
+            this.checkBox2.Size = new System.Drawing.Size(124, 17);
+            this.checkBox2.TabIndex = 91;
+            this.checkBox2.Text = "Expertise Proficiency";
+            this.checkBox2.ThreeState = true;
+            this.checkBox2.UseVisualStyleBackColor = true;
+            // 
             // CharacterDetailForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.CancelButton = this._buttonCancel;
-            this.ClientSize = new System.Drawing.Size(597, 495);
+            this.ClientSize = new System.Drawing.Size(833, 566);
+            this.Controls.Add(this.checkBox2);
+            this.Controls.Add(this.checkBox1);
             this.Controls.Add(this._checkChrSvThrwProf);
             this.Controls.Add(this._checkWisSvThrwProf);
             this.Controls.Add(this._checkIntSvThrwProf);
@@ -1243,7 +1276,7 @@
             this.Name = "CharacterDetailForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "New Character";
-            this.Load += new System.EventHandler(this.OnCharacterLoad);
+            this.Load += new System.EventHandler(this.OnCheckedChange);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1344,5 +1377,7 @@
         private System.Windows.Forms.CheckBox _checkIntSvThrwProf;
         private System.Windows.Forms.CheckBox _checkWisSvThrwProf;
         private System.Windows.Forms.CheckBox _checkChrSvThrwProf;
+        private System.Windows.Forms.CheckBox checkBox1;
+        private System.Windows.Forms.CheckBox checkBox2;
     }
 }

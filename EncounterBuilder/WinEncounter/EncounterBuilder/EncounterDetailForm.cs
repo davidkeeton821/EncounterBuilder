@@ -90,12 +90,12 @@ namespace EncounterBuilder
 
         private void OnCharacterEdit( object sender, EventArgs e )
         {
+            
             var existing = GetCharacter();
-            var form = new CharacterDetailForm
-            {
-                Text = "Edit Character",
-                Character = existing
-            };
+            if (existing == null)
+                return;
+
+            var form = new CharacterDetailForm(existing);
 
             var result = form.ShowDialog(this);
             if (result != DialogResult.OK)
@@ -104,7 +104,7 @@ namespace EncounterBuilder
             //Update the Character
             CopyCharacter(existing, form.Character);
 
-            RefreshUI();
+            RefreshUI();           
         }
 
         private void CopyCharacter( Character existing, Character newChar )
@@ -116,7 +116,20 @@ namespace EncounterBuilder
 
         private void OnCharacterDelete( object sender, EventArgs e )
         {
+            if (GetCharacter() == null)
+                return;
+            
+            if (!ShowConfirmation("Are you sure?", "Remove Encounter"))
+                return;
+
+            charList.RemoveAt(_dataGridViewCharacters.SelectedRows[0].Index);
+            
             RefreshUI();
+        }
+
+        private bool ShowConfirmation( string message, string title )
+        {
+            return (MessageBox.Show(this, message, title, MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes);
         }
 
         private void RefreshUI()
@@ -129,6 +142,7 @@ namespace EncounterBuilder
                 MessageBox.Show("Error loading characters");
             }           
         }
+
         private List<Character> charList = new List<Character>();
     }
 }

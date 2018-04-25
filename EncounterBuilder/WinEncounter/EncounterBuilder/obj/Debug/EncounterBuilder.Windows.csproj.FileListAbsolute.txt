@@ -64,3 +64,4 @@ C:\Users\David\Source\Repos\EncounterBuilder\EncounterBuilder\WinEncounter\Encou
 C:\Users\David\Source\Repos\EncounterBuilder\EncounterBuilder\WinEncounter\EncounterBuilder\obj\Debug\EncounterBuilder.Windows.csproj.CoreCompileInputs.cache
 C:\Users\David\Source\Repos\EncounterBuilder\EncounterBuilder\WinEncounter\EncounterBuilder\obj\Debug\EncounterBuilder.exe
 C:\Users\David\Source\Repos\EncounterBuilder\EncounterBuilder\WinEncounter\EncounterBuilder\obj\Debug\EncounterBuilder.pdb
+C:\Users\David\Source\Repos\EncounterBuilder\EncounterBuilder\WinEncounter\EncounterBuilder\obj\Debug\EncounterBuilder.RunEncounterForm.resources

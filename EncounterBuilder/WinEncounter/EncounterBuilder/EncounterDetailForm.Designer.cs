@@ -47,6 +47,9 @@
             this._btnEdit = new System.Windows.Forms.Button();
             this._btnDelete = new System.Windows.Forms.Button();
             this.label5 = new System.Windows.Forms.Label();
+            this.button1 = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
+            this.label6 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this._dataGridViewCharacters)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.characterBindingSource)).BeginInit();
             this.SuspendLayout();
@@ -54,7 +57,7 @@
             // _buttonSave
             // 
             this._buttonSave.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this._buttonSave.Location = new System.Drawing.Point(830, 405);
+            this._buttonSave.Location = new System.Drawing.Point(831, 505);
             this._buttonSave.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this._buttonSave.Name = "_buttonSave";
             this._buttonSave.Size = new System.Drawing.Size(75, 23);
@@ -67,13 +70,14 @@
             // 
             this._buttonCancel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this._buttonCancel.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this._buttonCancel.Location = new System.Drawing.Point(910, 405);
+            this._buttonCancel.Location = new System.Drawing.Point(912, 505);
             this._buttonCancel.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this._buttonCancel.Name = "_buttonCancel";
             this._buttonCancel.Size = new System.Drawing.Size(75, 23);
             this._buttonCancel.TabIndex = 1;
             this._buttonCancel.Text = "Cancel";
             this._buttonCancel.UseVisualStyleBackColor = true;
+            this._buttonCancel.Click += new System.EventHandler(this.OnCancel);
             // 
             // _textName
             // 
@@ -113,7 +117,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(163, 280);
+            this.label3.Location = new System.Drawing.Point(293, 238);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(130, 17);
             this.label3.TabIndex = 7;
@@ -143,7 +147,7 @@
             this._dataGridViewCharacters.RowHeadersVisible = false;
             this._dataGridViewCharacters.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this._dataGridViewCharacters.ShowCellErrors = false;
-            this._dataGridViewCharacters.Size = new System.Drawing.Size(557, 359);
+            this._dataGridViewCharacters.Size = new System.Drawing.Size(557, 429);
             this._dataGridViewCharacters.TabIndex = 8;
             // 
             // nameDataGridViewTextBoxColumn
@@ -183,7 +187,7 @@
             // 
             // _btnAdd
             // 
-            this._btnAdd.Location = new System.Drawing.Point(301, 274);
+            this._btnAdd.Location = new System.Drawing.Point(322, 259);
             this._btnAdd.Margin = new System.Windows.Forms.Padding(4);
             this._btnAdd.Name = "_btnAdd";
             this._btnAdd.Size = new System.Drawing.Size(100, 28);
@@ -195,7 +199,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(136, 316);
+            this.label4.Location = new System.Drawing.Point(265, 291);
             this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(157, 17);
@@ -204,7 +208,7 @@
             // 
             // _btnEdit
             // 
-            this._btnEdit.Location = new System.Drawing.Point(301, 310);
+            this._btnEdit.Location = new System.Drawing.Point(322, 312);
             this._btnEdit.Margin = new System.Windows.Forms.Padding(4);
             this._btnEdit.Name = "_btnEdit";
             this._btnEdit.Size = new System.Drawing.Size(100, 28);
@@ -215,7 +219,7 @@
             // 
             // _btnDelete
             // 
-            this._btnDelete.Location = new System.Drawing.Point(301, 346);
+            this._btnDelete.Location = new System.Drawing.Point(322, 416);
             this._btnDelete.Margin = new System.Windows.Forms.Padding(4);
             this._btnDelete.Name = "_btnDelete";
             this._btnDelete.Size = new System.Drawing.Size(100, 28);
@@ -227,19 +231,51 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(119, 352);
+            this.label5.Location = new System.Drawing.Point(248, 395);
             this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(174, 17);
             this.label5.TabIndex = 13;
             this.label5.Text = "Delete Selected Character";
             // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(12, 401);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(152, 126);
+            this.button1.TabIndex = 14;
+            this.button1.Text = "Run Encounter";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.OnEncounterRun);
+            // 
+            // button2
+            // 
+            this.button2.Location = new System.Drawing.Point(322, 364);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(100, 28);
+            this.button2.TabIndex = 15;
+            this.button2.Text = "Copy";
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.OnCopy);
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(258, 344);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(165, 17);
+            this.label6.TabIndex = 16;
+            this.label6.Text = "Copy Selected Character";
+            // 
             // EncounterDetailForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.CancelButton = this._buttonCancel;
-            this.ClientSize = new System.Drawing.Size(1023, 468);
+            this.ClientSize = new System.Drawing.Size(999, 539);
+            this.Controls.Add(this.label6);
+            this.Controls.Add(this.button2);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.label5);
             this.Controls.Add(this._btnDelete);
             this.Controls.Add(this._btnEdit);
@@ -288,5 +324,8 @@
         private System.Windows.Forms.Button _btnEdit;
         private System.Windows.Forms.Button _btnDelete;
         private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Label label6;
     }
 }

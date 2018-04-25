@@ -35,6 +35,8 @@ namespace EncounterBuilder
         public int Exp { get; set; }
         /// <summary>Gets or sets the character level.</summary>
         public int Level { get; set; }
+        ///<summary> Gets or sets true if HP is fixed or false if HP is random</summary>
+        public bool IsFixed { get; set; }
         /// <summary>Gets or sets the HP value.</summary>
         public int FixedHP { get; set; }
         /// <summary>Gets or sets the THP value.</summary>
@@ -61,8 +63,6 @@ namespace EncounterBuilder
         public int WisRaw {get; set; }
         /// <summary>Gets or sets the raw charisma stat.</summary>
         public int ChrRaw {get; set; }
-        /// <summary>Gets or sets the challenge rating.</summary>
-        public int ChallengeRating { get; set; }
         #endregion
 
         #region Proficiencies

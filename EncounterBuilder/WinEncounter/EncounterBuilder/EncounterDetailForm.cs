@@ -28,19 +28,24 @@ namespace EncounterBuilder
 
         private void OnSave( object sender, EventArgs e )
         {
+            var encounter = SaveEncounter();
+
+            //return from form
+            Encounter = encounter;
+            DialogResult = DialogResult.OK;
+            Close();
+        }
+
+        private Encounter SaveEncounter()
+        {
             //Create Encounter
-            var encounter = new Encounter
+            return new Encounter
             {
                 Name = _textName.Text,
                 Description = _textDescription.Text,
                 LastEdit = DateTime.Now,
                 Characters = charList
             };
-
-            //return from form
-            Encounter = encounter;
-            DialogResult = DialogResult.OK;
-            Close();
         }
 
         protected override void OnLoad( EventArgs e )
@@ -102,16 +107,17 @@ namespace EncounterBuilder
                 return;
 
             //Update the Character
-            CopyCharacter(existing, form.Character);
+            //CopyCharacter(existing, form.Character);
+            charList.ElementAt(charList.IndexOf(existing)).Name = form.Character.Name;
 
             RefreshUI();           
         }
 
-        private void CopyCharacter( Character existing, Character newChar )
+        private void CopyCharacter( Character copyTo, Character copyFrom )
         {
-            var index = charList.IndexOf(existing);
+            //var index = charList.IndexOf(existing);
 
-            charList.ElementAt(index).Name = newChar.Name;
+            //charList.ElementAt(index).Name = newChar.Name;
         }
 
         private void OnCharacterDelete( object sender, EventArgs e )
@@ -144,5 +150,44 @@ namespace EncounterBuilder
         }
 
         private List<Character> charList = new List<Character>();
+
+        private void OnEncounterRun( object sender, EventArgs e )
+        {
+            if (!ShowConfirmation("You must save before running an encounter, save now?", "Save Encounter"))
+                return;
+
+            var encounter = SaveEncounter();
+            Encounter = encounter;
+
+            var form = new RunEncounterForm( encounter.Characters, encounter.Name);     
+
+            //Show form modally
+            var result = form.ShowDialog(this);
+            if (result != DialogResult.OK)
+                return;
+            Encounter = form.Encounter;           
+        }
+
+        private void OnCancel( object sender, EventArgs e )
+        {
+            if (Encounter != null)
+                DialogResult = DialogResult.OK;
+            Close();
+        }
+
+        private void OnCopy( object sender, EventArgs e )
+        {
+            var existing = GetCharacter();
+            if (existing == null)
+                return;
+
+            var chrc = new Character()
+            {
+                Name = existing.Name
+            };
+
+            charList.Add(chrc);
+            RefreshUI();
+        }
     }
 }

@@ -57,7 +57,6 @@ namespace EncounterBuilder
         {
             var edit = false;
             Encounter encounter = null;
-
             encounter = GetEncounter(edit);              
 
             if(encounter != null)

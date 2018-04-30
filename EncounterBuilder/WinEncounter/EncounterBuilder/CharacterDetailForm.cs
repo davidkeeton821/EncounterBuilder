@@ -15,7 +15,8 @@ namespace EncounterBuilder
         public CharacterDetailForm()
         {
             InitializeComponent();
-            pictureBox1.Image = SystemIcons.Question.ToBitmap();
+            _pictureBox1.Image = SystemIcons.Question.ToBitmap();
+            ActiveControl = _textName;
         }
 
         public CharacterDetailForm(Character character)
@@ -67,6 +68,51 @@ namespace EncounterBuilder
             _textModNumTHP.Enabled = status;
             _textDisplayHPFormula.Enabled = status;
             _textDisplayTHPFormula.Enabled = status;
+
+            if (status)
+            {
+                UpdateFormula();
+            }
+        }
+
+        private void UpdateFormula()
+        {
+            _textDisplayHPFormula.Text = "";
+            _textDisplayTHPFormula.Text = "";
+
+            ParseAndAddToString(_textNumOfDiceHP.Text, _textDisplayHPFormula);
+            ParseAndAddToString(_textNumOfDiceTHP.Text, _textDisplayTHPFormula);
+
+            _textDisplayHPFormula.Text += "d";
+            _textDisplayTHPFormula.Text += "d";
+
+            ParseAndAddToString(_textDieSizeHP.Text, _textDisplayHPFormula);
+            ParseAndAddToString(_textDieSizeTHP.Text, _textDisplayTHPFormula);
+
+            var result = Int32.TryParse(_textModNumHP.Text, out int value);
+            if (value > 0)
+                _textDisplayHPFormula.Text += $"+{value}";
+            else if (value == 0)
+                _textDisplayHPFormula.Text += $"-{value}";
+            else
+                _textDisplayHPFormula.Text += $"{value}";
+
+            var result2 = Int32.TryParse(_textModNumTHP.Text, out int value2);
+            if (value2 > 0)
+                _textDisplayTHPFormula.Text += $"+{value2}";
+            else if (value2 == 0)
+                _textDisplayTHPFormula.Text += $"-{value2}";
+            else
+                _textDisplayTHPFormula.Text += $"{value2}";
+        }
+
+        private void ParseAndAddToString(string text, TextBox box)
+        {
+            var result = Int32.TryParse(text, out int value);
+            if (result)
+                box.Text += $"{value}";
+            else
+                box.Text += "0";           
         }
 
         private void SetFixed(bool status)
@@ -93,7 +139,7 @@ namespace EncounterBuilder
             //return from form
             Character = character;
             DialogResult = DialogResult.OK;
-            Close();
+
         }
 
         private void OnRawStrValueEntered(object sender, EventArgs e)
@@ -191,6 +237,41 @@ namespace EncounterBuilder
                 textBox.ForeColor = Color.Gray;
                 textBox.Text = "RAW";
             }
+        }
+
+        private void OnMouseHover_pictureBox1( object sender, EventArgs e )
+        {
+
+        }
+
+        private void OnNumHPDiceChanged( object sender, EventArgs e )
+        {
+            UpdateFormula();
+        }
+
+        private void OnDieSizeHPChanged( object sender, EventArgs e )
+        {
+            UpdateFormula();
+        }
+
+        private void OnModHPChanged( object sender, EventArgs e )
+        {
+            UpdateFormula();
+        }
+
+        private void OnNumTHPDiceChanged( object sender, EventArgs e )
+        {
+            UpdateFormula();
+        }
+
+        private void OnDieSizeTHPChanged( object sender, EventArgs e )
+        {
+            UpdateFormula();
+        }
+
+        private void OnModTHPChanged( object sender, EventArgs e )
+        {
+            UpdateFormula();
         }
     }
 }

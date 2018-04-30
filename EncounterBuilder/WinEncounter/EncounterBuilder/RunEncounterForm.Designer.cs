@@ -35,6 +35,7 @@
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
+            this.CurrentTurn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.nameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.classDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.DexRaw = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -56,6 +57,7 @@
             this._dataGridViewRunEncounter.AutoGenerateColumns = false;
             this._dataGridViewRunEncounter.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this._dataGridViewRunEncounter.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.CurrentTurn,
             this.nameDataGridViewTextBoxColumn,
             this.classDataGridViewTextBoxColumn,
             this.DexRaw,
@@ -73,6 +75,7 @@
             this._dataGridViewRunEncounter.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this._dataGridViewRunEncounter.Size = new System.Drawing.Size(907, 427);
             this._dataGridViewRunEncounter.TabIndex = 0;
+            this._dataGridViewRunEncounter.CellEndEdit += new System.Windows.Forms.DataGridViewCellEventHandler(this._dataGridViewRunEncounter_CellEndEdit);
             // 
             // characterBindingSource
             // 
@@ -80,7 +83,6 @@
             // 
             // button1
             // 
-            this.button1.DialogResult = System.Windows.Forms.DialogResult.OK;
             this.button1.Location = new System.Drawing.Point(763, 491);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(75, 23);
@@ -92,13 +94,13 @@
             // button2
             // 
             this.button2.CausesValidation = false;
-            this.button2.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.button2.Location = new System.Drawing.Point(844, 491);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(75, 23);
             this.button2.TabIndex = 2;
             this.button2.Text = "Exit";
             this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.OnExit);
             // 
             // button3
             // 
@@ -109,13 +111,24 @@
             this.button3.Text = "Merge Existing Encounter";
             this.button3.UseVisualStyleBackColor = true;
             // 
+            // CurrentTurn
+            // 
+            this.CurrentTurn.Frozen = true;
+            this.CurrentTurn.HeaderText = "Turn";
+            this.CurrentTurn.MinimumWidth = 50;
+            this.CurrentTurn.Name = "CurrentTurn";
+            this.CurrentTurn.ReadOnly = true;
+            this.CurrentTurn.Width = 50;
+            // 
             // nameDataGridViewTextBoxColumn
             // 
-            this.nameDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.nameDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
             this.nameDataGridViewTextBoxColumn.DataPropertyName = "Name";
+            this.nameDataGridViewTextBoxColumn.Frozen = true;
             this.nameDataGridViewTextBoxColumn.HeaderText = "Name";
             this.nameDataGridViewTextBoxColumn.MinimumWidth = 200;
             this.nameDataGridViewTextBoxColumn.Name = "nameDataGridViewTextBoxColumn";
+            this.nameDataGridViewTextBoxColumn.Width = 379;
             // 
             // classDataGridViewTextBoxColumn
             // 
@@ -197,6 +210,7 @@
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.BindingSource characterBindingSource;
+        private System.Windows.Forms.DataGridViewCheckBoxColumn CurrentTurn;
         private System.Windows.Forms.DataGridViewTextBoxColumn nameDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn classDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn DexRaw;

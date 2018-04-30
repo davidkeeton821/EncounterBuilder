@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this._buttonCancel = new System.Windows.Forms.Button();
             this._buttonSave = new System.Windows.Forms.Button();
             this._checkAcrobaticsProf = new System.Windows.Forms.CheckBox();
@@ -48,8 +49,6 @@
             this._checkHistoryProf = new System.Windows.Forms.CheckBox();
             this._checkDeceptionProf = new System.Windows.Forms.CheckBox();
             this._checkAthleticsProf = new System.Windows.Forms.CheckBox();
-            this.checkBox1 = new System.Windows.Forms.CheckBox();
-            this.checkBox2 = new System.Windows.Forms.CheckBox();
             this._textName = new System.Windows.Forms.TextBox();
             this._textClass = new System.Windows.Forms.TextBox();
             this._textAlignment = new System.Windows.Forms.TextBox();
@@ -122,14 +121,14 @@
             this._textModNumTHP = new System.Windows.Forms.TextBox();
             this.label32 = new System.Windows.Forms.Label();
             this.label29 = new System.Windows.Forms.Label();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this._pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
+            ((System.ComponentModel.ISupportInitialize)(this._pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // _buttonCancel
             // 
             this._buttonCancel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this._buttonCancel.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this._buttonCancel.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this._buttonCancel.Location = new System.Drawing.Point(783, 651);
             this._buttonCancel.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -142,7 +141,6 @@
             // _buttonSave
             // 
             this._buttonSave.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this._buttonSave.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this._buttonSave.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this._buttonSave.Location = new System.Drawing.Point(671, 651);
             this._buttonSave.Margin = new System.Windows.Forms.Padding(4);
@@ -157,7 +155,7 @@
             // 
             this._checkAcrobaticsProf.AutoSize = true;
             this._checkAcrobaticsProf.Font = new System.Drawing.Font("Century Gothic", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this._checkAcrobaticsProf.Location = new System.Drawing.Point(213, 220);
+            this._checkAcrobaticsProf.Location = new System.Drawing.Point(213, 209);
             this._checkAcrobaticsProf.Margin = new System.Windows.Forms.Padding(4);
             this._checkAcrobaticsProf.Name = "_checkAcrobaticsProf";
             this._checkAcrobaticsProf.Size = new System.Drawing.Size(132, 26);
@@ -170,7 +168,7 @@
             // 
             this._checkAnimalHandlingProf.AutoSize = true;
             this._checkAnimalHandlingProf.Font = new System.Drawing.Font("Century Gothic", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this._checkAnimalHandlingProf.Location = new System.Drawing.Point(213, 245);
+            this._checkAnimalHandlingProf.Location = new System.Drawing.Point(213, 234);
             this._checkAnimalHandlingProf.Margin = new System.Windows.Forms.Padding(4);
             this._checkAnimalHandlingProf.Name = "_checkAnimalHandlingProf";
             this._checkAnimalHandlingProf.Size = new System.Drawing.Size(182, 26);
@@ -183,7 +181,7 @@
             // 
             this._checkArcanaProf.AutoSize = true;
             this._checkArcanaProf.Font = new System.Drawing.Font("Century Gothic", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this._checkArcanaProf.Location = new System.Drawing.Point(213, 270);
+            this._checkArcanaProf.Location = new System.Drawing.Point(213, 258);
             this._checkArcanaProf.Margin = new System.Windows.Forms.Padding(4);
             this._checkArcanaProf.Name = "_checkArcanaProf";
             this._checkArcanaProf.Size = new System.Drawing.Size(103, 26);
@@ -196,7 +194,7 @@
             // 
             this._checkInvestigationProf.AutoSize = true;
             this._checkInvestigationProf.Font = new System.Drawing.Font("Century Gothic", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this._checkInvestigationProf.Location = new System.Drawing.Point(213, 415);
+            this._checkInvestigationProf.Location = new System.Drawing.Point(213, 410);
             this._checkInvestigationProf.Margin = new System.Windows.Forms.Padding(4);
             this._checkInvestigationProf.Name = "_checkInvestigationProf";
             this._checkInvestigationProf.Size = new System.Drawing.Size(151, 26);
@@ -209,7 +207,7 @@
             // 
             this._checkIntimidationProf.AutoSize = true;
             this._checkIntimidationProf.Font = new System.Drawing.Font("Century Gothic", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this._checkIntimidationProf.Location = new System.Drawing.Point(213, 367);
+            this._checkIntimidationProf.Location = new System.Drawing.Point(213, 358);
             this._checkIntimidationProf.Margin = new System.Windows.Forms.Padding(4);
             this._checkIntimidationProf.Name = "_checkIntimidationProf";
             this._checkIntimidationProf.Size = new System.Drawing.Size(139, 26);
@@ -222,7 +220,7 @@
             // 
             this._checkInsightProf.AutoSize = true;
             this._checkInsightProf.Font = new System.Drawing.Font("Century Gothic", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this._checkInsightProf.Location = new System.Drawing.Point(213, 391);
+            this._checkInsightProf.Location = new System.Drawing.Point(213, 384);
             this._checkInsightProf.Margin = new System.Windows.Forms.Padding(4);
             this._checkInsightProf.Name = "_checkInsightProf";
             this._checkInsightProf.Size = new System.Drawing.Size(91, 26);
@@ -313,7 +311,7 @@
             // 
             this._checkPerceptionProf.AutoSize = true;
             this._checkPerceptionProf.Font = new System.Drawing.Font("Century Gothic", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this._checkPerceptionProf.Location = new System.Drawing.Point(213, 487);
+            this._checkPerceptionProf.Location = new System.Drawing.Point(213, 486);
             this._checkPerceptionProf.Margin = new System.Windows.Forms.Padding(4);
             this._checkPerceptionProf.Name = "_checkPerceptionProf";
             this._checkPerceptionProf.Size = new System.Drawing.Size(132, 26);
@@ -326,7 +324,7 @@
             // 
             this._checkNatureProf.AutoSize = true;
             this._checkNatureProf.Font = new System.Drawing.Font("Century Gothic", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this._checkNatureProf.Location = new System.Drawing.Point(213, 463);
+            this._checkNatureProf.Location = new System.Drawing.Point(213, 461);
             this._checkNatureProf.Margin = new System.Windows.Forms.Padding(4);
             this._checkNatureProf.Name = "_checkNatureProf";
             this._checkNatureProf.Size = new System.Drawing.Size(96, 26);
@@ -339,7 +337,7 @@
             // 
             this._checkMedicineProf.AutoSize = true;
             this._checkMedicineProf.Font = new System.Drawing.Font("Century Gothic", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this._checkMedicineProf.Location = new System.Drawing.Point(213, 439);
+            this._checkMedicineProf.Location = new System.Drawing.Point(213, 436);
             this._checkMedicineProf.Margin = new System.Windows.Forms.Padding(4);
             this._checkMedicineProf.Name = "_checkMedicineProf";
             this._checkMedicineProf.Size = new System.Drawing.Size(116, 26);
@@ -352,7 +350,7 @@
             // 
             this._checkHistoryProf.AutoSize = true;
             this._checkHistoryProf.Font = new System.Drawing.Font("Century Gothic", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this._checkHistoryProf.Location = new System.Drawing.Point(213, 343);
+            this._checkHistoryProf.Location = new System.Drawing.Point(213, 332);
             this._checkHistoryProf.Margin = new System.Windows.Forms.Padding(4);
             this._checkHistoryProf.Name = "_checkHistoryProf";
             this._checkHistoryProf.Size = new System.Drawing.Size(91, 26);
@@ -365,7 +363,7 @@
             // 
             this._checkDeceptionProf.AutoSize = true;
             this._checkDeceptionProf.Font = new System.Drawing.Font("Century Gothic", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this._checkDeceptionProf.Location = new System.Drawing.Point(213, 319);
+            this._checkDeceptionProf.Location = new System.Drawing.Point(213, 306);
             this._checkDeceptionProf.Margin = new System.Windows.Forms.Padding(4);
             this._checkDeceptionProf.Name = "_checkDeceptionProf";
             this._checkDeceptionProf.Size = new System.Drawing.Size(129, 26);
@@ -378,7 +376,7 @@
             // 
             this._checkAthleticsProf.AutoSize = true;
             this._checkAthleticsProf.Font = new System.Drawing.Font("Century Gothic", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this._checkAthleticsProf.Location = new System.Drawing.Point(213, 295);
+            this._checkAthleticsProf.Location = new System.Drawing.Point(213, 282);
             this._checkAthleticsProf.Margin = new System.Windows.Forms.Padding(4);
             this._checkAthleticsProf.Name = "_checkAthleticsProf";
             this._checkAthleticsProf.Size = new System.Drawing.Size(110, 26);
@@ -386,40 +384,6 @@
             this._checkAthleticsProf.Text = "Athletics";
             this._checkAthleticsProf.ThreeState = true;
             this._checkAthleticsProf.UseVisualStyleBackColor = true;
-            // 
-            // checkBox1
-            // 
-            this.checkBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.checkBox1.AutoCheck = false;
-            this.checkBox1.AutoSize = true;
-            this.checkBox1.Checked = true;
-            this.checkBox1.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.checkBox1.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.checkBox1.Location = new System.Drawing.Point(213, 198);
-            this.checkBox1.Margin = new System.Windows.Forms.Padding(4);
-            this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Size = new System.Drawing.Size(106, 23);
-            this.checkBox1.TabIndex = 90;
-            this.checkBox1.Text = "Proficient";
-            this.checkBox1.ThreeState = true;
-            this.checkBox1.UseVisualStyleBackColor = true;
-            // 
-            // checkBox2
-            // 
-            this.checkBox2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.checkBox2.AutoCheck = false;
-            this.checkBox2.AutoSize = true;
-            this.checkBox2.Checked = true;
-            this.checkBox2.CheckState = System.Windows.Forms.CheckState.Indeterminate;
-            this.checkBox2.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.checkBox2.Location = new System.Drawing.Point(330, 198);
-            this.checkBox2.Margin = new System.Windows.Forms.Padding(4);
-            this.checkBox2.Name = "checkBox2";
-            this.checkBox2.Size = new System.Drawing.Size(104, 23);
-            this.checkBox2.TabIndex = 91;
-            this.checkBox2.Text = "Expertise";
-            this.checkBox2.ThreeState = true;
-            this.checkBox2.UseVisualStyleBackColor = true;
             // 
             // _textName
             // 
@@ -819,6 +783,7 @@
             // 
             // _textSpeed
             // 
+            this._textSpeed.Font = new System.Drawing.Font("Microsoft Sans Serif", 19.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this._textSpeed.Location = new System.Drawing.Point(452, 536);
             this._textSpeed.MaxLength = 2;
             this._textSpeed.Multiline = true;
@@ -829,6 +794,7 @@
             // 
             // _textArmorClass
             // 
+            this._textArmorClass.Font = new System.Drawing.Font("Microsoft Sans Serif", 19.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this._textArmorClass.Location = new System.Drawing.Point(553, 422);
             this._textArmorClass.MaxLength = 2;
             this._textArmorClass.Multiline = true;
@@ -875,6 +841,7 @@
             // 
             // _textProfBonus
             // 
+            this._textProfBonus.Font = new System.Drawing.Font("Microsoft Sans Serif", 19.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this._textProfBonus.Location = new System.Drawing.Point(452, 422);
             this._textProfBonus.MaxLength = 2;
             this._textProfBonus.Multiline = true;
@@ -997,6 +964,7 @@
             // 
             // _textFixedTHP
             // 
+            this._textFixedTHP.CausesValidation = false;
             this._textFixedTHP.Font = new System.Drawing.Font("Century Gothic", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this._textFixedTHP.Location = new System.Drawing.Point(781, 229);
             this._textFixedTHP.MaxLength = 3;
@@ -1019,15 +987,14 @@
             // 
             // _textDisplayHPFormula
             // 
-            this._textDisplayHPFormula.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this._textDisplayHPFormula.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this._textDisplayHPFormula.Location = new System.Drawing.Point(673, 571);
-            this._textDisplayHPFormula.MaxLength = 9;
+            this._textDisplayHPFormula.MaxLength = 11;
             this._textDisplayHPFormula.Multiline = true;
             this._textDisplayHPFormula.Name = "_textDisplayHPFormula";
             this._textDisplayHPFormula.ReadOnly = true;
             this._textDisplayHPFormula.Size = new System.Drawing.Size(100, 35);
             this._textDisplayHPFormula.TabIndex = 150;
-            this._textDisplayHPFormula.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // label4
             // 
@@ -1069,12 +1036,13 @@
             // 
             this._textModNumHP.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this._textModNumHP.Location = new System.Drawing.Point(673, 501);
-            this._textModNumHP.MaxLength = 2;
+            this._textModNumHP.MaxLength = 3;
             this._textModNumHP.Multiline = true;
             this._textModNumHP.Name = "_textModNumHP";
             this._textModNumHP.Size = new System.Drawing.Size(52, 35);
             this._textModNumHP.TabIndex = 145;
             this._textModNumHP.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this._textModNumHP.TextChanged += new System.EventHandler(this.OnModHPChanged);
             // 
             // _textDieSizeHP
             // 
@@ -1086,6 +1054,7 @@
             this._textDieSizeHP.Size = new System.Drawing.Size(52, 35);
             this._textDieSizeHP.TabIndex = 144;
             this._textDieSizeHP.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this._textDieSizeHP.TextChanged += new System.EventHandler(this.OnDieSizeHPChanged);
             // 
             // label17
             // 
@@ -1120,9 +1089,11 @@
             this._textNumOfDiceHP.Size = new System.Drawing.Size(52, 35);
             this._textNumOfDiceHP.TabIndex = 141;
             this._textNumOfDiceHP.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this._textNumOfDiceHP.TextChanged += new System.EventHandler(this.OnNumHPDiceChanged);
             // 
             // _textNumOfDiceTHP
             // 
+            this._textNumOfDiceTHP.CausesValidation = false;
             this._textNumOfDiceTHP.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this._textNumOfDiceTHP.Location = new System.Drawing.Point(781, 370);
             this._textNumOfDiceTHP.MaxLength = 3;
@@ -1131,6 +1102,7 @@
             this._textNumOfDiceTHP.Size = new System.Drawing.Size(52, 35);
             this._textNumOfDiceTHP.TabIndex = 152;
             this._textNumOfDiceTHP.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this._textNumOfDiceTHP.TextChanged += new System.EventHandler(this.OnNumTHPDiceChanged);
             // 
             // label24
             // 
@@ -1170,6 +1142,7 @@
             // 
             // _textDieSizeTHP
             // 
+            this._textDieSizeTHP.CausesValidation = false;
             this._textDieSizeTHP.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this._textDieSizeTHP.Location = new System.Drawing.Point(781, 436);
             this._textDieSizeTHP.MaxLength = 3;
@@ -1178,6 +1151,7 @@
             this._textDieSizeTHP.Size = new System.Drawing.Size(52, 35);
             this._textDieSizeTHP.TabIndex = 156;
             this._textDieSizeTHP.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this._textDieSizeTHP.TextChanged += new System.EventHandler(this.OnDieSizeTHPChanged);
             // 
             // label27
             // 
@@ -1193,6 +1167,7 @@
             // 
             // _textInitiative
             // 
+            this._textInitiative.Font = new System.Drawing.Font("Microsoft Sans Serif", 19.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this._textInitiative.Location = new System.Drawing.Point(553, 536);
             this._textInitiative.MaxLength = 2;
             this._textInitiative.Multiline = true;
@@ -1215,15 +1190,14 @@
             // 
             // _textDisplayTHPFormula
             // 
-            this._textDisplayTHPFormula.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this._textDisplayTHPFormula.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this._textDisplayTHPFormula.Location = new System.Drawing.Point(781, 571);
-            this._textDisplayTHPFormula.MaxLength = 9;
+            this._textDisplayTHPFormula.MaxLength = 11;
             this._textDisplayTHPFormula.Multiline = true;
             this._textDisplayTHPFormula.Name = "_textDisplayTHPFormula";
             this._textDisplayTHPFormula.ReadOnly = true;
             this._textDisplayTHPFormula.Size = new System.Drawing.Size(100, 35);
             this._textDisplayTHPFormula.TabIndex = 160;
-            this._textDisplayTHPFormula.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // label30
             // 
@@ -1251,14 +1225,16 @@
             // 
             // _textModNumTHP
             // 
+            this._textModNumTHP.CausesValidation = false;
             this._textModNumTHP.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this._textModNumTHP.Location = new System.Drawing.Point(781, 503);
-            this._textModNumTHP.MaxLength = 2;
+            this._textModNumTHP.MaxLength = 3;
             this._textModNumTHP.Multiline = true;
             this._textModNumTHP.Name = "_textModNumTHP";
             this._textModNumTHP.Size = new System.Drawing.Size(52, 35);
             this._textModNumTHP.TabIndex = 164;
             this._textModNumTHP.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this._textModNumTHP.TextChanged += new System.EventHandler(this.OnModTHPChanged);
             // 
             // label32
             // 
@@ -1284,16 +1260,22 @@
             this.label29.Text = "Fixed Hit Points";
             this.label29.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // pictureBox1
+            // _pictureBox1
             // 
-            this.pictureBox1.Location = new System.Drawing.Point(390, 156);
-            this.pictureBox1.MaximumSize = new System.Drawing.Size(39, 35);
-            this.pictureBox1.MinimumSize = new System.Drawing.Size(39, 35);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(39, 35);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 167;
-            this.pictureBox1.TabStop = false;
+            this._pictureBox1.Location = new System.Drawing.Point(390, 156);
+            this._pictureBox1.MaximumSize = new System.Drawing.Size(39, 35);
+            this._pictureBox1.MinimumSize = new System.Drawing.Size(39, 35);
+            this._pictureBox1.Name = "_pictureBox1";
+            this._pictureBox1.Size = new System.Drawing.Size(39, 35);
+            this._pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this._pictureBox1.TabIndex = 167;
+            this._pictureBox1.TabStop = false;
+            this.toolTip1.SetToolTip(this._pictureBox1, "Check = X1 Prof. Bonus\r\nSquare = X2 Prof. Bnous");
+            this._pictureBox1.MouseHover += new System.EventHandler(this.OnMouseHover_pictureBox1);
+            // 
+            // toolTip1
+            // 
+            this.toolTip1.ToolTipIcon = System.Windows.Forms.ToolTipIcon.Info;
             // 
             // CharacterDetailForm
             // 
@@ -1301,7 +1283,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.CancelButton = this._buttonSave;
             this.ClientSize = new System.Drawing.Size(900, 706);
-            this.Controls.Add(this.pictureBox1);
+            this.Controls.Add(this._pictureBox1);
             this.Controls.Add(this.label29);
             this.Controls.Add(this.label32);
             this.Controls.Add(this._textModNumTHP);
@@ -1374,8 +1356,6 @@
             this.Controls.Add(this.label19);
             this.Controls.Add(this.label20);
             this.Controls.Add(this.label21);
-            this.Controls.Add(this.checkBox2);
-            this.Controls.Add(this.checkBox1);
             this.Controls.Add(this._checkSurvivalProf);
             this.Controls.Add(this._checkStealthProf);
             this.Controls.Add(this._checkSleightOfHandProf);
@@ -1406,7 +1386,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "New Character";
             this.Load += new System.EventHandler(this.OnCheckedChange);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this._pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1434,8 +1414,6 @@
         private System.Windows.Forms.CheckBox _checkHistoryProf;
         private System.Windows.Forms.CheckBox _checkDeceptionProf;
         private System.Windows.Forms.CheckBox _checkAthleticsProf;
-        private System.Windows.Forms.CheckBox checkBox1;
-        private System.Windows.Forms.CheckBox checkBox2;
         private System.Windows.Forms.TextBox _textName;
         private System.Windows.Forms.TextBox _textClass;
         private System.Windows.Forms.TextBox _textAlignment;
@@ -1508,6 +1486,7 @@
         private System.Windows.Forms.TextBox _textModNumTHP;
         private System.Windows.Forms.Label label32;
         private System.Windows.Forms.Label label29;
-        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.PictureBox _pictureBox1;
+        private System.Windows.Forms.ToolTip toolTip1;
     }
 }

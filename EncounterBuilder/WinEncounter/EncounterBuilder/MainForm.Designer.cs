@@ -38,6 +38,7 @@
             this._miEncounterDelete = new System.Windows.Forms.ToolStripMenuItem();
             this.helpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this._miHelpAbout = new System.Windows.Forms.ToolStripMenuItem();
+            this.runToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this._mainMenu.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -66,7 +67,7 @@
             // _miFileExit
             // 
             this._miFileExit.Name = "_miFileExit";
-            this._miFileExit.Size = new System.Drawing.Size(181, 26);
+            this._miFileExit.Size = new System.Drawing.Size(108, 26);
             this._miFileExit.Text = "&Exit";
             this._miFileExit.Click += new System.EventHandler(this.OnFileExit);
             // 
@@ -75,6 +76,7 @@
             this.encounterToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this._miEncounterNew,
             this._miEncounterLoad,
+            this.runToolStripMenuItem,
             this.toolStripSeparator1,
             this._miEncounterDelete});
             this.encounterToolStripMenuItem.Name = "encounterToolStripMenuItem";
@@ -118,9 +120,15 @@
             // _miHelpAbout
             // 
             this._miHelpAbout.Name = "_miHelpAbout";
-            this._miHelpAbout.Size = new System.Drawing.Size(181, 26);
+            this._miHelpAbout.Size = new System.Drawing.Size(125, 26);
             this._miHelpAbout.Text = "&About";
             this._miHelpAbout.Click += new System.EventHandler(this.OnHelpAbout);
+            // 
+            // runToolStripMenuItem
+            // 
+            this.runToolStripMenuItem.Name = "runToolStripMenuItem";
+            this.runToolStripMenuItem.Size = new System.Drawing.Size(181, 26);
+            this.runToolStripMenuItem.Text = "&Run";
             // 
             // MainForm
             // 
@@ -152,6 +160,7 @@
         private System.Windows.Forms.ToolStripMenuItem _miEncounterDelete;
         private System.Windows.Forms.ToolStripMenuItem helpToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem _miHelpAbout;
+        private System.Windows.Forms.ToolStripMenuItem runToolStripMenuItem;
     }
 }
 

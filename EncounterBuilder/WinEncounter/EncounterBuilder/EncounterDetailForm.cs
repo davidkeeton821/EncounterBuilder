@@ -25,19 +25,18 @@ namespace EncounterBuilder
         }
 
         public Encounter Encounter { get; set; }
+        private bool _editFlag = false;
 
         private void OnSave( object sender, EventArgs e )
         {
             var encounter = SaveEncounter();
-
-            //return from form
-            Encounter = encounter;
-            DialogResult = DialogResult.OK;
-            Close();
+            Encounter = encounter;          
         }
 
         private Encounter SaveEncounter()
         {
+            _buttonSave.Enabled = false;
+            _editFlag = true;
             //Create Encounter
             return new Encounter
             {
@@ -46,6 +45,7 @@ namespace EncounterBuilder
                 LastEdit = DateTime.Now,
                 Characters = charList
             };
+            
         }
 
         protected override void OnLoad( EventArgs e )
@@ -89,6 +89,7 @@ namespace EncounterBuilder
 
             //"Add" the Character
             charList.Add(form.Character);
+            _buttonSave.Enabled = true;
 
             RefreshUI();
         }       
@@ -109,6 +110,7 @@ namespace EncounterBuilder
             //Update the Character
             //CopyCharacter(existing, form.Character);
             charList.ElementAt(charList.IndexOf(existing)).Name = form.Character.Name;
+            _buttonSave.Enabled = true;
 
             RefreshUI();           
         }
@@ -129,7 +131,8 @@ namespace EncounterBuilder
                 return;
 
             charList.RemoveAt(_dataGridViewCharacters.SelectedRows[0].Index);
-            
+            _buttonSave.Enabled = true;
+
             RefreshUI();
         }
 
@@ -158,19 +161,24 @@ namespace EncounterBuilder
 
             var encounter = SaveEncounter();
             Encounter = encounter;
+            characterBindingSource.SuspendBinding();
 
-            var form = new RunEncounterForm( encounter.Characters, encounter.Name);     
+            var form = new RunEncounterForm( Encounter );     
 
             //Show form modally
             var result = form.ShowDialog(this);
             if (result != DialogResult.OK)
                 return;
-            Encounter = form.Encounter;           
+            Encounter = form.Encounter;
+            charList = Encounter.Characters;
+            _buttonSave.Enabled = true;
+            characterBindingSource.ResumeBinding();
+            //RefreshUI();          
         }
 
-        private void OnCancel( object sender, EventArgs e )
+        private void OnExit( object sender, EventArgs e )
         {
-            if (Encounter != null)
+            if (_editFlag)
                 DialogResult = DialogResult.OK;
             Close();
         }
@@ -188,6 +196,21 @@ namespace EncounterBuilder
 
             charList.Add(chrc);
             RefreshUI();
+        }
+
+        private void OnCellEdit( object sender, DataGridViewCellEventArgs e )
+        {
+            
+        }
+
+        private void OnNameChanged( object sender, EventArgs e )
+        {
+            _buttonSave.Enabled = true;
+        }
+
+        private void OnDescriptionChanged( object sender, EventArgs e )
+        {
+            _buttonSave.Enabled = true;
         }
     }
 }

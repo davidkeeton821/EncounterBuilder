@@ -69,15 +69,14 @@
             // _buttonCancel
             // 
             this._buttonCancel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this._buttonCancel.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this._buttonCancel.Location = new System.Drawing.Point(912, 505);
             this._buttonCancel.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this._buttonCancel.Name = "_buttonCancel";
             this._buttonCancel.Size = new System.Drawing.Size(75, 23);
             this._buttonCancel.TabIndex = 1;
-            this._buttonCancel.Text = "Cancel";
+            this._buttonCancel.Text = "Exit";
             this._buttonCancel.UseVisualStyleBackColor = true;
-            this._buttonCancel.Click += new System.EventHandler(this.OnCancel);
+            this._buttonCancel.Click += new System.EventHandler(this.OnExit);
             // 
             // _textName
             // 
@@ -86,6 +85,7 @@
             this._textName.Name = "_textName";
             this._textName.Size = new System.Drawing.Size(289, 22);
             this._textName.TabIndex = 2;
+            this._textName.TextChanged += new System.EventHandler(this.OnNameChanged);
             // 
             // label1
             // 
@@ -113,6 +113,7 @@
             this._textDescription.Name = "_textDescription";
             this._textDescription.Size = new System.Drawing.Size(289, 177);
             this._textDescription.TabIndex = 5;
+            this._textDescription.TextChanged += new System.EventHandler(this.OnDescriptionChanged);
             // 
             // label3
             // 
@@ -149,6 +150,7 @@
             this._dataGridViewCharacters.ShowCellErrors = false;
             this._dataGridViewCharacters.Size = new System.Drawing.Size(557, 429);
             this._dataGridViewCharacters.TabIndex = 8;
+            this._dataGridViewCharacters.CellEndEdit += new System.Windows.Forms.DataGridViewCellEventHandler(this.OnCellEdit);
             // 
             // nameDataGridViewTextBoxColumn
             // 
@@ -271,7 +273,6 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.CancelButton = this._buttonCancel;
             this.ClientSize = new System.Drawing.Size(999, 539);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.button2);

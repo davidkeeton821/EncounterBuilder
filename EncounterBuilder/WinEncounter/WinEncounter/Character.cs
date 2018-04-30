@@ -45,24 +45,26 @@ namespace EncounterBuilder
         public string RandomFormulaHP { get; set; }
         /// <summary>Formula string to generate random THP value.</summary>
         public string RandomFormulaTHP { get; set; }
+        /// <summary>Gets or sets the Initiative value.</summary>
+        public int Initiative { get; set; }
         /// <summary>Gets or sets the AC value.</summary>
-        public int AC {get; set; }
+        public int AC { get; set; }
         /// <summary>Gets or sets the speed value.</summary>
-        public int Speed {get; set; }
+        public int Speed { get; set; }
         /// <summary>Gets or sets the proficiency bonus.</summary>
-        public int ProfBonus {get; set; }
+        public int ProfBonus { get; set; }
         /// <summary>Gets or sets the raw strength stat.</summary>
-        public int StrRaw {get; set; }
+        public int StrRaw { get; set; }
         /// <summary>Gets or sets the raw dexterity stat.</summary>
-        public int DexRaw {get; set; }
+        public int DexRaw { get; set; }
         /// <summary>Gets or sets the raw consitution stat.</summary>
-        public int ConRaw {get; set; }
+        public int ConRaw { get; set; }
         /// <summary>Gets or sets the raw intelligence stat.</summary>
-        public int IntRaw {get; set; }
+        public int IntRaw { get; set; }
         /// <summary>Gets or sets the raw wisdom stat.</summary>
-        public int WisRaw {get; set; }
+        public int WisRaw { get; set; }
         /// <summary>Gets or sets the raw charisma stat.</summary>
-        public int ChrRaw {get; set; }
+        public int ChrRaw { get; set; }
         #endregion
 
         #region Proficiencies

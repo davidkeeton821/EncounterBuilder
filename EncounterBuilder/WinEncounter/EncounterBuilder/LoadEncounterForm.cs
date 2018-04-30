@@ -20,8 +20,8 @@ namespace EncounterBuilder
             var button = Controls.Find("_btnLoad", true);
             if (edit)
             {
-                Text = "Edit Encounter";
-                button[0].Text = "Edit";
+                Text = "Load Encounter";
+                button[0].Text = "Load";
             } else
             {
                 Text = "Delete Encounter";

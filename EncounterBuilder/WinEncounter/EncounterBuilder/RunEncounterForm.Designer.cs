@@ -29,19 +29,20 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this._dataGridViewRunEncounter = new System.Windows.Forms.DataGridView();
+            this.characterBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
-            this.DexRaw = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Speed = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.classDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DexRaw = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.fixedHPDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.fixedTHPDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.levelDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.aCDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.characterBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.Speed = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this._dataGridViewRunEncounter)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.characterBindingSource)).BeginInit();
             this.SuspendLayout();
@@ -50,6 +51,8 @@
             // 
             this._dataGridViewRunEncounter.AllowUserToAddRows = false;
             this._dataGridViewRunEncounter.AllowUserToOrderColumns = true;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this._dataGridViewRunEncounter.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this._dataGridViewRunEncounter.AutoGenerateColumns = false;
             this._dataGridViewRunEncounter.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this._dataGridViewRunEncounter.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -65,9 +68,15 @@
             this._dataGridViewRunEncounter.Location = new System.Drawing.Point(12, 12);
             this._dataGridViewRunEncounter.Name = "_dataGridViewRunEncounter";
             this._dataGridViewRunEncounter.RowHeadersVisible = false;
+            this._dataGridViewRunEncounter.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
             this._dataGridViewRunEncounter.RowTemplate.Height = 24;
+            this._dataGridViewRunEncounter.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this._dataGridViewRunEncounter.Size = new System.Drawing.Size(907, 427);
             this._dataGridViewRunEncounter.TabIndex = 0;
+            // 
+            // characterBindingSource
+            // 
+            this.characterBindingSource.DataSource = typeof(EncounterBuilder.Character);
             // 
             // button1
             // 
@@ -100,21 +109,6 @@
             this.button3.Text = "Merge Existing Encounter";
             this.button3.UseVisualStyleBackColor = true;
             // 
-            // DexRaw
-            // 
-            this.DexRaw.DataPropertyName = "DexRaw";
-            this.DexRaw.HeaderText = "Initiative";
-            this.DexRaw.MinimumWidth = 100;
-            this.DexRaw.Name = "DexRaw";
-            // 
-            // Speed
-            // 
-            this.Speed.DataPropertyName = "Speed";
-            this.Speed.HeaderText = "Speed(ft.)";
-            this.Speed.MinimumWidth = 50;
-            this.Speed.Name = "Speed";
-            this.Speed.Width = 50;
-            // 
             // nameDataGridViewTextBoxColumn
             // 
             this.nameDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
@@ -130,6 +124,14 @@
             this.classDataGridViewTextBoxColumn.MinimumWidth = 200;
             this.classDataGridViewTextBoxColumn.Name = "classDataGridViewTextBoxColumn";
             this.classDataGridViewTextBoxColumn.Width = 200;
+            // 
+            // DexRaw
+            // 
+            this.DexRaw.DataPropertyName = "DexRaw";
+            this.DexRaw.HeaderText = "Initiative";
+            this.DexRaw.MinimumWidth = 75;
+            this.DexRaw.Name = "DexRaw";
+            this.DexRaw.Width = 75;
             // 
             // fixedHPDataGridViewTextBoxColumn
             // 
@@ -163,9 +165,13 @@
             this.aCDataGridViewTextBoxColumn.Name = "aCDataGridViewTextBoxColumn";
             this.aCDataGridViewTextBoxColumn.Width = 50;
             // 
-            // characterBindingSource
+            // Speed
             // 
-            this.characterBindingSource.DataSource = typeof(EncounterBuilder.Character);
+            this.Speed.DataPropertyName = "Speed";
+            this.Speed.HeaderText = "Speed(ft.)";
+            this.Speed.MinimumWidth = 50;
+            this.Speed.Name = "Speed";
+            this.Speed.Width = 50;
             // 
             // RunEncounterForm
             // 
@@ -190,6 +196,7 @@
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.BindingSource characterBindingSource;
         private System.Windows.Forms.DataGridViewTextBoxColumn nameDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn classDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn DexRaw;
@@ -198,6 +205,5 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn levelDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn aCDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn Speed;
-        private System.Windows.Forms.BindingSource characterBindingSource;
     }
 }

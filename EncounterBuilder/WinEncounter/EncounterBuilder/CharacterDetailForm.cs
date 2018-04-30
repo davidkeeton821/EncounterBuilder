@@ -15,6 +15,7 @@ namespace EncounterBuilder
         public CharacterDetailForm()
         {
             InitializeComponent();
+            pictureBox1.Image = SystemIcons.Question.ToBitmap();
         }
 
         public CharacterDetailForm(Character character)
@@ -43,43 +44,35 @@ namespace EncounterBuilder
             if (_radioFixed.Checked)
             {
                 _radioRandom.Checked = false;
-                _textFixedHP.Enabled = true;
-                _textFixedTHP.Enabled = true;
-
-                _textNumOfDiceHP.Enabled = false;
-                _textNumOfDiceTHP.Enabled = false;
-                _textDieSizeHP.Enabled = false;
-                _textDieSizeTHP.Enabled = false;
-                _listBoxKeepLowHP.Enabled = false;
-                _listBoxKeepLowTHP.Enabled = false;
-                _textNumOfKeepLowHP.Enabled = false;
-                _textNumOfKeepLowTHP.Enabled = false;
-                _listBoxPlusMinusHP.Enabled = false;
-                _listBoxPlusMinusTHP.Enabled = false;
-                _textModNumHP.Enabled = false;
-                _textModNumTHP.Enabled = false;
+                SetFixed(true);
+                SetRandom(false);              
             }
 
             //Random dice, disable fixed health stats
             if (_radioRandom.Checked)
             {
                 _radioFixed.Checked = false;
-                _textFixedHP.Enabled = false;
-                _textFixedTHP.Enabled = false;
-
-                _textNumOfDiceHP.Enabled = true;
-                _textNumOfDiceTHP.Enabled = true;
-                _textDieSizeHP.Enabled = true;
-                _textDieSizeTHP.Enabled = true;
-                _listBoxKeepLowHP.Enabled = true;
-                _listBoxKeepLowTHP.Enabled = true;
-                _textNumOfKeepLowHP.Enabled = true;
-                _textNumOfKeepLowTHP.Enabled = true;
-                _listBoxPlusMinusHP.Enabled = true;
-                _listBoxPlusMinusTHP.Enabled = true;
-                _textModNumHP.Enabled = true;
-                _textModNumTHP.Enabled = true;
+                SetFixed(false);
+                SetRandom(true);
             }
+        }
+
+        private void SetRandom(bool status)
+        {
+            _textNumOfDiceHP.Enabled = status;
+            _textNumOfDiceTHP.Enabled = status;
+            _textDieSizeHP.Enabled = status;
+            _textDieSizeTHP.Enabled = status;
+            _textModNumHP.Enabled = status;
+            _textModNumTHP.Enabled = status;
+            _textDisplayHPFormula.Enabled = status;
+            _textDisplayTHPFormula.Enabled = status;
+        }
+
+        private void SetFixed(bool status)
+        {
+            _textFixedHP.Enabled = status;
+            _textFixedTHP.Enabled = status;
         }
 
         private void OncheckStrSvThrwProfChecked(object sender, EventArgs e)
@@ -94,6 +87,7 @@ namespace EncounterBuilder
             var character = new Character
             {
                 Name = _textName.Text,   
+                //Class = 
             };
 
             //return from form
@@ -162,9 +156,41 @@ namespace EncounterBuilder
             if (value >= 0)
                 return $"+{value}";
             else
-                return $"-{value}";                     
+                return $"{value}";                     
         }
 
+        private void OnRawStatFocus( object sender, EventArgs e )
+        {
+            HideMask(sender,e);           
+        }
 
+        private void OnRawStatFocusLeave( object sender, EventArgs e )
+        {
+            ShowMask(sender, e);
+        }
+
+        private void HideMask( object sender, EventArgs e )
+        {
+            var textBox = sender as TextBox;
+
+            if (textBox.Text.Equals("RAW"))
+            {
+                textBox.Font = new Font(textBox.Font, FontStyle.Regular);
+                textBox.ForeColor = Color.Black;
+                textBox.Text = "";
+            }
+        }
+
+        private void ShowMask (object sender, EventArgs e)
+        {
+            var textBox = sender as TextBox;
+
+            if (textBox.Text == "")
+            {
+                textBox.Font = new Font(textBox.Font, FontStyle.Italic);
+                textBox.ForeColor = Color.Gray;
+                textBox.Text = "RAW";
+            }
+        }
     }
 }

@@ -8,6 +8,19 @@ namespace EncounterBuilder
 {
     public class Encounter
     {
+        public Encounter () { }
+        public Encounter(Encounter encounter)
+        {
+            Id = encounter.Id;
+            foreach (var chrc in encounter.Characters)
+            {
+                Characters.Add(new Character(chrc));
+            }
+            Name = encounter.Name;
+            Description = encounter.Description;
+            LastEdit = encounter.LastEdit;
+        }
+
         public int Id { get; set; }
         public List<Character> Characters
         {
@@ -17,6 +30,7 @@ namespace EncounterBuilder
             }
             set
             {
+                _characters.Clear();
                 foreach (var chrc in value)
                 {
                     _characters.Add(chrc);

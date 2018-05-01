@@ -17,6 +17,8 @@ namespace EncounterBuilder
             InitializeComponent();
             _pictureBox1.Image = SystemIcons.Question.ToBitmap();
             ActiveControl = _textName;
+            _buttonSave.Enabled = false;
+            _radioFixed.Checked = true;
         }
 
         public CharacterDetailForm(Character character)
@@ -33,28 +35,25 @@ namespace EncounterBuilder
 
         public Character Character { get; set; }
 
-        private void OnCheckedChange( object sender, EventArgs e )
-        {
-            //TODO: implement on load, including UpdateUI() 
+        private void OnRadioRandomCheckedChange( object sender, EventArgs e )
+        { 
             UpdateUI(sender, e);
+            OnAnyEdit(sender, e);
         }
 
         private void UpdateUI (object sender, EventArgs e)
-        {            
-            //Fixed health, disable random health stats
-            if (_radioFixed.Checked)
+        {
+            if(_radioFixed.Checked)
             {
                 _radioRandom.Checked = false;
+                SetRandom(false);
                 SetFixed(true);
-                SetRandom(false);              
             }
-
-            //Random dice, disable fixed health stats
             if (_radioRandom.Checked)
             {
                 _radioFixed.Checked = false;
-                SetFixed(false);
                 SetRandom(true);
+                SetFixed(false);
             }
         }
 
@@ -73,6 +72,12 @@ namespace EncounterBuilder
             {
                 UpdateFormula();
             }
+        }
+
+        public void OnUpdateFormula(object sender, EventArgs e)
+        {
+            UpdateFormula();
+            OnAnyEdit(sender, e);
         }
 
         private void UpdateFormula()
@@ -129,33 +134,100 @@ namespace EncounterBuilder
 
         private void OnSave(object sender, EventArgs e)
         {
-            //Create Encounter
+            int exp;
+            int level;
+            int strength;
+            int dexterity;
+            int constitution;
+            int intelligence;
+            int wisdom;
+            int charisma;
+            int hp;
+            int thp;
+            int ac;
+            int profBonus;
+            int initiative;
+            int speed;
+
+            try
+            {
+                exp   = TryParse(_textXP.Text);
+                level = TryParse(_textLevel.Text);
+                strength = TryParse(_textStrRaw.Text);
+                dexterity = TryParse(_textDexRaw.Text);
+                constitution = TryParse(_textConRaw.Text);
+                intelligence = TryParse(_textIntRaw.Text);
+                wisdom = TryParse(_textWisRaw.Text);
+                charisma = TryParse(_textChrRaw.Text);
+                if(_radioFixed.Checked)
+                {
+                    hp = TryParse(_textFixedHP.Text);
+                    thp = TryParse(_textFixedTHP.Text);
+                }
+                ac = TryParse(_textArmorClass.Text);
+                //make a list containing plus and minus symbols
+                _textProfBonus.Text.TrimStart(list);
+                profBonus = TryParse(_textProfBonus.Text);
+                initiative = TryParse(_textInitiative.Text);
+                speed = TryParse(_textSpeed.Text);
+
+                //get all checkboxes dealt with
+            } catch
+            {
+                MessageBox.Show("Error saving character");
+                return;
+            }
+            //Create Character
             var character = new Character
             {
-                Name = _textName.Text,   
-                //Class = 
+                Name = _textName.Text,
+                Race = _textRace.Text,
+                Class = _textClass.Text,
+                Alignment = _textAlignment.Text,
+                Exp = exp,
+                Level = level,
+                StrRaw = strength,
+                DexRaw = dexterity,
+                ConRaw = constitution,
+                IntRaw = intelligence,
+                WisRaw = wisdom,
+                ChrRaw = charisma,
+           
             };
 
-            //return from form
-            Character = character;
-            DialogResult = DialogResult.OK;
+            _buttonSave.Enabled = false;
+            _editFlag = true;
 
+            Character = character;
+        }
+
+        private int TryParse(string text)
+        {           
+            var result = Int32.TryParse(text, out int value);
+            if (!result)
+                throw new Exception();
+            int exp = value;
+            return exp;
         }
 
         private void OnRawStrValueEntered(object sender, EventArgs e)
         {
             var result = Int32.TryParse(_textStrRaw.Text, out int value);
             if (result)
+            {
                 _textStrMod.Text = CalculateMod(value);
-            else
+                OnAnyEdit(sender, e);
+            } else
                 _textStrMod.Text = "";          
         }
         private void OnRawDexValueEntered( object sender, EventArgs e )
         {
             var result = Int32.TryParse(_textDexRaw.Text, out int value);
             if (result)
+            {
                 _textDexMod.Text = CalculateMod(value);
-            else
+                OnAnyEdit(sender, e);
+            } else
                 _textDexMod.Text = "";
         }
 
@@ -164,8 +236,10 @@ namespace EncounterBuilder
         {
             var result = Int32.TryParse(_textConRaw.Text, out int value);
             if (result)
+            {
                 _textConMod.Text = CalculateMod(value);
-            else
+                OnAnyEdit(sender, e);
+            } else
                 _textConMod.Text = "";
         }
 
@@ -173,8 +247,10 @@ namespace EncounterBuilder
         {
             var result = Int32.TryParse(_textIntRaw.Text, out int value);
             if (result)
+            {
                 _textIntMod.Text = CalculateMod(value);
-            else
+                OnAnyEdit(sender, e);
+            } else
                 _textIntMod.Text = "";
         }
 
@@ -182,8 +258,10 @@ namespace EncounterBuilder
         {
             var result = Int32.TryParse(_textWisRaw.Text, out int value);
             if (result)
+            {
                 _textWisMod.Text = CalculateMod(value);
-            else
+                OnAnyEdit(sender, e);
+            } else
                 _textWisMod.Text = "";
         }
 
@@ -191,9 +269,12 @@ namespace EncounterBuilder
         {
             var result = Int32.TryParse(_textChrRaw.Text, out int value);
             if (result)
+            {
                 _textChrMod.Text = CalculateMod(value);
-            else
+                OnAnyEdit(sender, e);
+            } else
                 _textChrMod.Text = "";
+            
         }
 
         private string CalculateMod(int value)
@@ -247,6 +328,7 @@ namespace EncounterBuilder
         private void OnNumHPDiceChanged( object sender, EventArgs e )
         {
             UpdateFormula();
+            OnAnyEdit(sender, e);
         }
 
         private void OnDieSizeHPChanged( object sender, EventArgs e )
@@ -257,21 +339,39 @@ namespace EncounterBuilder
         private void OnModHPChanged( object sender, EventArgs e )
         {
             UpdateFormula();
+            OnAnyEdit(sender, e);
         }
 
         private void OnNumTHPDiceChanged( object sender, EventArgs e )
         {
             UpdateFormula();
+            OnAnyEdit(sender, e);
         }
 
         private void OnDieSizeTHPChanged( object sender, EventArgs e )
         {
             UpdateFormula();
+            OnAnyEdit(sender,e);
         }
 
         private void OnModTHPChanged( object sender, EventArgs e )
         {
             UpdateFormula();
         }
+
+        private void OnAnyEdit(object sender, EventArgs e)
+        {
+            _buttonSave.Enabled = true;
+        }
+
+        private void OnButtonExit( object sender, EventArgs e )
+        {
+            if (_editFlag)
+                DialogResult = DialogResult.OK;
+            else
+                DialogResult = DialogResult.Cancel;
+        }
+
+        private bool _editFlag = false;
     }
 }

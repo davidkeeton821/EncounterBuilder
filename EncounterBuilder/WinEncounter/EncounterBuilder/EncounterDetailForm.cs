@@ -37,15 +37,13 @@ namespace EncounterBuilder
         {
             _buttonSave.Enabled = false;
             _editFlag = true;
-            //Create Encounter
             return new Encounter
             {
                 Name = _textName.Text,
                 Description = _textDescription.Text,
                 LastEdit = DateTime.Now,
                 Characters = charList
-            };
-            
+            };           
         }
 
         protected override void OnLoad( EventArgs e )
@@ -156,12 +154,15 @@ namespace EncounterBuilder
 
         private void OnEncounterRun( object sender, EventArgs e )
         {
-            if (!ShowConfirmation("You must save before running an encounter, save now?", "Save Encounter"))
-                return;
+            if (_buttonSave.Enabled)
+            {
+                if (!ShowConfirmation("You must save before running an encounter, save now?", "Save Encounter"))
+                    return;
+            }
 
             var encounter = SaveEncounter();
             Encounter = encounter;
-            characterBindingSource.SuspendBinding();
+            //characterBindingSource.SuspendBinding();
 
             var form = new RunEncounterForm( Encounter );     
 
@@ -169,11 +170,12 @@ namespace EncounterBuilder
             var result = form.ShowDialog(this);
             if (result != DialogResult.OK)
                 return;
+
             Encounter = form.Encounter;
-            charList = Encounter.Characters;
+            charList = Encounter.Characters;           
             _buttonSave.Enabled = true;
             characterBindingSource.ResumeBinding();
-            //RefreshUI();          
+            RefreshUI();          
         }
 
         private void OnExit( object sender, EventArgs e )

@@ -45,6 +45,7 @@
     <Compile Include="EncounterBuilderDatabase.cs" />
     <Compile Include="IEncounterBuilderDatabase.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SortableBindingList.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

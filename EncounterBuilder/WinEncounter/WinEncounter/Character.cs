@@ -8,6 +8,13 @@ namespace EncounterBuilder
 {
     public class Character
     {
+        public Character() { }
+
+        public Character (Character character)
+        {
+            Name = character.Name;
+        }
+
         public int Id { get; set; }
 
         #region General Info
@@ -16,6 +23,11 @@ namespace EncounterBuilder
         {
             get { return _name ?? ""; }
             set { _name = value; }
+        }
+        public string Alignment
+        {
+            get { return _alignment ?? ""; }
+            set { _alignment = value; }
         }
 
         /// <summary>Gets or sets the class.</summary>
@@ -146,5 +158,6 @@ namespace EncounterBuilder
         private string _name;
         private string _class;
         private string _race;
+        private string _alignment;
     }
 }

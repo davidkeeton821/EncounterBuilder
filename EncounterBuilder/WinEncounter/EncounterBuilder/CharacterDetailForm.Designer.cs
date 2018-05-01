@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            this._buttonCancel = new System.Windows.Forms.Button();
+            this._buttonExit = new System.Windows.Forms.Button();
             this._buttonSave = new System.Windows.Forms.Button();
             this._checkAcrobaticsProf = new System.Windows.Forms.CheckBox();
             this._checkAnimalHandlingProf = new System.Windows.Forms.CheckBox();
@@ -126,17 +126,18 @@
             ((System.ComponentModel.ISupportInitialize)(this._pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
-            // _buttonCancel
+            // _buttonExit
             // 
-            this._buttonCancel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this._buttonCancel.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this._buttonCancel.Location = new System.Drawing.Point(783, 651);
-            this._buttonCancel.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this._buttonCancel.Name = "_buttonCancel";
-            this._buttonCancel.Size = new System.Drawing.Size(105, 43);
-            this._buttonCancel.TabIndex = 57;
-            this._buttonCancel.Text = "Cancel";
-            this._buttonCancel.UseVisualStyleBackColor = true;
+            this._buttonExit.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this._buttonExit.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this._buttonExit.Location = new System.Drawing.Point(783, 651);
+            this._buttonExit.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this._buttonExit.Name = "_buttonExit";
+            this._buttonExit.Size = new System.Drawing.Size(105, 43);
+            this._buttonExit.TabIndex = 57;
+            this._buttonExit.Text = "Exit";
+            this._buttonExit.UseVisualStyleBackColor = true;
+            this._buttonExit.Click += new System.EventHandler(this.OnButtonExit);
             // 
             // _buttonSave
             // 
@@ -163,6 +164,7 @@
             this._checkAcrobaticsProf.Text = "Acrobatics";
             this._checkAcrobaticsProf.ThreeState = true;
             this._checkAcrobaticsProf.UseVisualStyleBackColor = true;
+            this._checkAcrobaticsProf.CheckedChanged += new System.EventHandler(this.OnAnyEdit);
             // 
             // _checkAnimalHandlingProf
             // 
@@ -176,6 +178,7 @@
             this._checkAnimalHandlingProf.Text = "Animal Handling";
             this._checkAnimalHandlingProf.ThreeState = true;
             this._checkAnimalHandlingProf.UseVisualStyleBackColor = true;
+            this._checkAnimalHandlingProf.CheckedChanged += new System.EventHandler(this.OnAnyEdit);
             // 
             // _checkArcanaProf
             // 
@@ -189,6 +192,7 @@
             this._checkArcanaProf.Text = "Arcana";
             this._checkArcanaProf.ThreeState = true;
             this._checkArcanaProf.UseVisualStyleBackColor = true;
+            this._checkArcanaProf.CheckedChanged += new System.EventHandler(this.OnAnyEdit);
             // 
             // _checkInvestigationProf
             // 
@@ -202,6 +206,7 @@
             this._checkInvestigationProf.Text = "Investigation";
             this._checkInvestigationProf.ThreeState = true;
             this._checkInvestigationProf.UseVisualStyleBackColor = true;
+            this._checkInvestigationProf.CheckedChanged += new System.EventHandler(this.OnAnyEdit);
             // 
             // _checkIntimidationProf
             // 
@@ -215,6 +220,7 @@
             this._checkIntimidationProf.Text = "Intimidation";
             this._checkIntimidationProf.ThreeState = true;
             this._checkIntimidationProf.UseVisualStyleBackColor = true;
+            this._checkIntimidationProf.CheckedChanged += new System.EventHandler(this.OnAnyEdit);
             // 
             // _checkInsightProf
             // 
@@ -228,6 +234,7 @@
             this._checkInsightProf.Text = "Insight";
             this._checkInsightProf.ThreeState = true;
             this._checkInsightProf.UseVisualStyleBackColor = true;
+            this._checkInsightProf.CheckedChanged += new System.EventHandler(this.OnAnyEdit);
             // 
             // _checkReligionProf
             // 
@@ -241,6 +248,7 @@
             this._checkReligionProf.Text = "Religion";
             this._checkReligionProf.ThreeState = true;
             this._checkReligionProf.UseVisualStyleBackColor = true;
+            this._checkReligionProf.CheckedChanged += new System.EventHandler(this.OnAnyEdit);
             // 
             // _checkPersuasionProf
             // 
@@ -254,6 +262,7 @@
             this._checkPersuasionProf.Text = "Persuasion";
             this._checkPersuasionProf.ThreeState = true;
             this._checkPersuasionProf.UseVisualStyleBackColor = true;
+            this._checkPersuasionProf.CheckedChanged += new System.EventHandler(this.OnAnyEdit);
             // 
             // _checkPerformanceProf
             // 
@@ -267,6 +276,7 @@
             this._checkPerformanceProf.Text = "Performance";
             this._checkPerformanceProf.ThreeState = true;
             this._checkPerformanceProf.UseVisualStyleBackColor = true;
+            this._checkPerformanceProf.CheckedChanged += new System.EventHandler(this.OnAnyEdit);
             // 
             // _checkSurvivalProf
             // 
@@ -280,6 +290,7 @@
             this._checkSurvivalProf.Text = "Survival";
             this._checkSurvivalProf.ThreeState = true;
             this._checkSurvivalProf.UseVisualStyleBackColor = true;
+            this._checkSurvivalProf.CheckedChanged += new System.EventHandler(this.OnAnyEdit);
             // 
             // _checkStealthProf
             // 
@@ -293,6 +304,7 @@
             this._checkStealthProf.Text = "Stealth";
             this._checkStealthProf.ThreeState = true;
             this._checkStealthProf.UseVisualStyleBackColor = true;
+            this._checkStealthProf.CheckedChanged += new System.EventHandler(this.OnAnyEdit);
             // 
             // _checkSleightOfHandProf
             // 
@@ -306,6 +318,7 @@
             this._checkSleightOfHandProf.Text = "Sleight of Hand";
             this._checkSleightOfHandProf.ThreeState = true;
             this._checkSleightOfHandProf.UseVisualStyleBackColor = true;
+            this._checkSleightOfHandProf.CheckedChanged += new System.EventHandler(this.OnAnyEdit);
             // 
             // _checkPerceptionProf
             // 
@@ -319,6 +332,7 @@
             this._checkPerceptionProf.Text = "Perception";
             this._checkPerceptionProf.ThreeState = true;
             this._checkPerceptionProf.UseVisualStyleBackColor = true;
+            this._checkPerceptionProf.CheckedChanged += new System.EventHandler(this.OnAnyEdit);
             // 
             // _checkNatureProf
             // 
@@ -332,6 +346,7 @@
             this._checkNatureProf.Text = "Nature";
             this._checkNatureProf.ThreeState = true;
             this._checkNatureProf.UseVisualStyleBackColor = true;
+            this._checkNatureProf.CheckedChanged += new System.EventHandler(this.OnAnyEdit);
             // 
             // _checkMedicineProf
             // 
@@ -345,6 +360,7 @@
             this._checkMedicineProf.Text = "Medicine";
             this._checkMedicineProf.ThreeState = true;
             this._checkMedicineProf.UseVisualStyleBackColor = true;
+            this._checkMedicineProf.CheckedChanged += new System.EventHandler(this.OnAnyEdit);
             // 
             // _checkHistoryProf
             // 
@@ -358,6 +374,7 @@
             this._checkHistoryProf.Text = "History";
             this._checkHistoryProf.ThreeState = true;
             this._checkHistoryProf.UseVisualStyleBackColor = true;
+            this._checkHistoryProf.CheckedChanged += new System.EventHandler(this.OnAnyEdit);
             // 
             // _checkDeceptionProf
             // 
@@ -371,6 +388,7 @@
             this._checkDeceptionProf.Text = "Deception";
             this._checkDeceptionProf.ThreeState = true;
             this._checkDeceptionProf.UseVisualStyleBackColor = true;
+            this._checkDeceptionProf.CheckedChanged += new System.EventHandler(this.OnAnyEdit);
             // 
             // _checkAthleticsProf
             // 
@@ -384,6 +402,7 @@
             this._checkAthleticsProf.Text = "Athletics";
             this._checkAthleticsProf.ThreeState = true;
             this._checkAthleticsProf.UseVisualStyleBackColor = true;
+            this._checkAthleticsProf.CheckedChanged += new System.EventHandler(this.OnAnyEdit);
             // 
             // _textName
             // 
@@ -393,6 +412,7 @@
             this._textName.Name = "_textName";
             this._textName.Size = new System.Drawing.Size(237, 28);
             this._textName.TabIndex = 92;
+            this._textName.TextChanged += new System.EventHandler(this.OnAnyEdit);
             // 
             // _textClass
             // 
@@ -402,6 +422,7 @@
             this._textClass.Name = "_textClass";
             this._textClass.Size = new System.Drawing.Size(110, 28);
             this._textClass.TabIndex = 93;
+            this._textClass.TextChanged += new System.EventHandler(this.OnAnyEdit);
             // 
             // _textAlignment
             // 
@@ -411,6 +432,7 @@
             this._textAlignment.Name = "_textAlignment";
             this._textAlignment.Size = new System.Drawing.Size(138, 28);
             this._textAlignment.TabIndex = 103;
+            this._textAlignment.TextChanged += new System.EventHandler(this.OnAnyEdit);
             // 
             // _textRace
             // 
@@ -420,6 +442,7 @@
             this._textRace.Name = "_textRace";
             this._textRace.Size = new System.Drawing.Size(108, 28);
             this._textRace.TabIndex = 102;
+            this._textRace.TextChanged += new System.EventHandler(this.OnAnyEdit);
             // 
             // _textLevel
             // 
@@ -429,6 +452,7 @@
             this._textLevel.Name = "_textLevel";
             this._textLevel.Size = new System.Drawing.Size(108, 28);
             this._textLevel.TabIndex = 101;
+            this._textLevel.TextChanged += new System.EventHandler(this.OnAnyEdit);
             // 
             // _textXP
             // 
@@ -438,6 +462,7 @@
             this._textXP.Name = "_textXP";
             this._textXP.Size = new System.Drawing.Size(110, 28);
             this._textXP.TabIndex = 100;
+            this._textXP.TextChanged += new System.EventHandler(this.OnAnyEdit);
             // 
             // label1
             // 
@@ -791,6 +816,7 @@
             this._textSpeed.Size = new System.Drawing.Size(70, 70);
             this._textSpeed.TabIndex = 128;
             this._textSpeed.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this._textSpeed.TextChanged += new System.EventHandler(this.OnAnyEdit);
             // 
             // _textArmorClass
             // 
@@ -802,6 +828,7 @@
             this._textArmorClass.Size = new System.Drawing.Size(70, 70);
             this._textArmorClass.TabIndex = 127;
             this._textArmorClass.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this._textArmorClass.TextChanged += new System.EventHandler(this.OnAnyEdit);
             // 
             // label23
             // 
@@ -849,6 +876,7 @@
             this._textProfBonus.Size = new System.Drawing.Size(70, 70);
             this._textProfBonus.TabIndex = 123;
             this._textProfBonus.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this._textProfBonus.TextChanged += new System.EventHandler(this.OnAnyEdit);
             // 
             // label14
             // 
@@ -870,6 +898,7 @@
             this._checkStrSave.TabIndex = 130;
             this._checkStrSave.Text = "Strength";
             this._checkStrSave.UseVisualStyleBackColor = true;
+            this._checkStrSave.CheckedChanged += new System.EventHandler(this.OnAnyEdit);
             // 
             // _checkDexSave
             // 
@@ -881,6 +910,7 @@
             this._checkDexSave.TabIndex = 131;
             this._checkDexSave.Text = "Dexterity";
             this._checkDexSave.UseVisualStyleBackColor = true;
+            this._checkDexSave.CheckedChanged += new System.EventHandler(this.OnAnyEdit);
             // 
             // _checkConSave
             // 
@@ -892,6 +922,7 @@
             this._checkConSave.TabIndex = 132;
             this._checkConSave.Text = "Consitution";
             this._checkConSave.UseVisualStyleBackColor = true;
+            this._checkConSave.CheckedChanged += new System.EventHandler(this.OnAnyEdit);
             // 
             // _checkIntSave
             // 
@@ -903,6 +934,7 @@
             this._checkIntSave.TabIndex = 133;
             this._checkIntSave.Text = "Intelligence";
             this._checkIntSave.UseVisualStyleBackColor = true;
+            this._checkIntSave.CheckedChanged += new System.EventHandler(this.OnAnyEdit);
             // 
             // _checkWisSave
             // 
@@ -914,6 +946,7 @@
             this._checkWisSave.TabIndex = 134;
             this._checkWisSave.Text = "Wisdom";
             this._checkWisSave.UseVisualStyleBackColor = true;
+            this._checkWisSave.CheckedChanged += new System.EventHandler(this.OnAnyEdit);
             // 
             // _checkChrSave
             // 
@@ -925,6 +958,7 @@
             this._checkChrSave.TabIndex = 135;
             this._checkChrSave.Text = "Charisma";
             this._checkChrSave.UseVisualStyleBackColor = true;
+            this._checkChrSave.CheckedChanged += new System.EventHandler(this.OnAnyEdit);
             // 
             // _radioFixed
             // 
@@ -936,7 +970,7 @@
             this._radioFixed.TabIndex = 140;
             this._radioFixed.TabStop = true;
             this._radioFixed.UseVisualStyleBackColor = true;
-            this._radioFixed.CheckedChanged += new System.EventHandler(this.OnCheckedChange);
+            this._radioFixed.CheckedChanged += new System.EventHandler(this.OnRadioRandomCheckedChange);
             // 
             // label16
             // 
@@ -973,6 +1007,7 @@
             this._textFixedTHP.Size = new System.Drawing.Size(88, 51);
             this._textFixedTHP.TabIndex = 137;
             this._textFixedTHP.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this._textFixedTHP.TextChanged += new System.EventHandler(this.OnAnyEdit);
             // 
             // _textFixedHP
             // 
@@ -984,6 +1019,7 @@
             this._textFixedHP.Size = new System.Drawing.Size(88, 51);
             this._textFixedHP.TabIndex = 136;
             this._textFixedHP.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this._textFixedHP.TextChanged += new System.EventHandler(this.OnAnyEdit);
             // 
             // _textDisplayHPFormula
             // 
@@ -1042,7 +1078,7 @@
             this._textModNumHP.Size = new System.Drawing.Size(52, 35);
             this._textModNumHP.TabIndex = 145;
             this._textModNumHP.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this._textModNumHP.TextChanged += new System.EventHandler(this.OnModHPChanged);
+            this._textModNumHP.TextChanged += new System.EventHandler(this.OnUpdateFormula);
             // 
             // _textDieSizeHP
             // 
@@ -1054,7 +1090,7 @@
             this._textDieSizeHP.Size = new System.Drawing.Size(52, 35);
             this._textDieSizeHP.TabIndex = 144;
             this._textDieSizeHP.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this._textDieSizeHP.TextChanged += new System.EventHandler(this.OnDieSizeHPChanged);
+            this._textDieSizeHP.TextChanged += new System.EventHandler(this.OnUpdateFormula);
             // 
             // label17
             // 
@@ -1077,7 +1113,7 @@
             this._radioRandom.TabIndex = 142;
             this._radioRandom.TabStop = true;
             this._radioRandom.UseVisualStyleBackColor = true;
-            this._radioRandom.CheckedChanged += new System.EventHandler(this.OnCheckedChange);
+            this._radioRandom.CheckedChanged += new System.EventHandler(this.OnRadioRandomCheckedChange);
             // 
             // _textNumOfDiceHP
             // 
@@ -1089,7 +1125,7 @@
             this._textNumOfDiceHP.Size = new System.Drawing.Size(52, 35);
             this._textNumOfDiceHP.TabIndex = 141;
             this._textNumOfDiceHP.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this._textNumOfDiceHP.TextChanged += new System.EventHandler(this.OnNumHPDiceChanged);
+            this._textNumOfDiceHP.TextChanged += new System.EventHandler(this.OnUpdateFormula);
             // 
             // _textNumOfDiceTHP
             // 
@@ -1102,7 +1138,7 @@
             this._textNumOfDiceTHP.Size = new System.Drawing.Size(52, 35);
             this._textNumOfDiceTHP.TabIndex = 152;
             this._textNumOfDiceTHP.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this._textNumOfDiceTHP.TextChanged += new System.EventHandler(this.OnNumTHPDiceChanged);
+            this._textNumOfDiceTHP.TextChanged += new System.EventHandler(this.OnUpdateFormula);
             // 
             // label24
             // 
@@ -1151,7 +1187,7 @@
             this._textDieSizeTHP.Size = new System.Drawing.Size(52, 35);
             this._textDieSizeTHP.TabIndex = 156;
             this._textDieSizeTHP.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this._textDieSizeTHP.TextChanged += new System.EventHandler(this.OnDieSizeTHPChanged);
+            this._textDieSizeTHP.TextChanged += new System.EventHandler(this.OnUpdateFormula);
             // 
             // label27
             // 
@@ -1175,6 +1211,7 @@
             this._textInitiative.Size = new System.Drawing.Size(70, 70);
             this._textInitiative.TabIndex = 159;
             this._textInitiative.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this._textInitiative.TextChanged += new System.EventHandler(this.OnAnyEdit);
             // 
             // label28
             // 
@@ -1234,7 +1271,7 @@
             this._textModNumTHP.Size = new System.Drawing.Size(52, 35);
             this._textModNumTHP.TabIndex = 164;
             this._textModNumTHP.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this._textModNumTHP.TextChanged += new System.EventHandler(this.OnModTHPChanged);
+            this._textModNumTHP.TextChanged += new System.EventHandler(this.OnUpdateFormula);
             // 
             // label32
             // 
@@ -1281,7 +1318,6 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.CancelButton = this._buttonSave;
             this.ClientSize = new System.Drawing.Size(900, 706);
             this.Controls.Add(this._pictureBox1);
             this.Controls.Add(this.label29);
@@ -1375,7 +1411,7 @@
             this.Controls.Add(this._checkAnimalHandlingProf);
             this.Controls.Add(this._checkAcrobaticsProf);
             this.Controls.Add(this._buttonSave);
-            this.Controls.Add(this._buttonCancel);
+            this.Controls.Add(this._buttonExit);
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.MaximizeBox = false;
             this.MaximumSize = new System.Drawing.Size(918, 753);
@@ -1385,7 +1421,7 @@
             this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "New Character";
-            this.Load += new System.EventHandler(this.OnCheckedChange);
+            this.Load += new System.EventHandler(this.OnRadioRandomCheckedChange);
             ((System.ComponentModel.ISupportInitialize)(this._pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -1394,7 +1430,7 @@
 
         #endregion
 
-        private System.Windows.Forms.Button _buttonCancel;
+        private System.Windows.Forms.Button _buttonExit;
         private System.Windows.Forms.Button _buttonSave;
         private System.Windows.Forms.CheckBox _checkAcrobaticsProf;
         private System.Windows.Forms.CheckBox _checkAnimalHandlingProf;

@@ -31,10 +31,10 @@
             this.components = new System.ComponentModel.Container();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this._dataGridViewRunEncounter = new System.Windows.Forms.DataGridView();
-            this.characterBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
+            this._btnSave = new System.Windows.Forms.Button();
+            this._btnExit = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
+            this.characterBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.CurrentTurn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.nameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.classDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -73,34 +73,31 @@
             this._dataGridViewRunEncounter.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
             this._dataGridViewRunEncounter.RowTemplate.Height = 24;
             this._dataGridViewRunEncounter.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this._dataGridViewRunEncounter.Size = new System.Drawing.Size(907, 427);
+            this._dataGridViewRunEncounter.Size = new System.Drawing.Size(948, 427);
             this._dataGridViewRunEncounter.TabIndex = 0;
             this._dataGridViewRunEncounter.CellEndEdit += new System.Windows.Forms.DataGridViewCellEventHandler(this._dataGridViewRunEncounter_CellEndEdit);
+            this._dataGridViewRunEncounter.ColumnHeaderMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.OnColumnHeaderClick);
             // 
-            // characterBindingSource
+            // _btnSave
             // 
-            this.characterBindingSource.DataSource = typeof(EncounterBuilder.Character);
+            this._btnSave.Location = new System.Drawing.Point(804, 491);
+            this._btnSave.Name = "_btnSave";
+            this._btnSave.Size = new System.Drawing.Size(75, 23);
+            this._btnSave.TabIndex = 1;
+            this._btnSave.Text = "Save";
+            this._btnSave.UseVisualStyleBackColor = true;
+            this._btnSave.Click += new System.EventHandler(this.OnSave);
             // 
-            // button1
+            // _btnExit
             // 
-            this.button1.Location = new System.Drawing.Point(763, 491);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 1;
-            this.button1.Text = "Save";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.OnSave);
-            // 
-            // button2
-            // 
-            this.button2.CausesValidation = false;
-            this.button2.Location = new System.Drawing.Point(844, 491);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(75, 23);
-            this.button2.TabIndex = 2;
-            this.button2.Text = "Exit";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.OnExit);
+            this._btnExit.CausesValidation = false;
+            this._btnExit.Location = new System.Drawing.Point(885, 491);
+            this._btnExit.Name = "_btnExit";
+            this._btnExit.Size = new System.Drawing.Size(75, 23);
+            this._btnExit.TabIndex = 2;
+            this._btnExit.Text = "Exit";
+            this._btnExit.UseVisualStyleBackColor = true;
+            this._btnExit.Click += new System.EventHandler(this.OnExit);
             // 
             // button3
             // 
@@ -110,6 +107,10 @@
             this.button3.TabIndex = 3;
             this.button3.Text = "Merge Existing Encounter";
             this.button3.UseVisualStyleBackColor = true;
+            // 
+            // characterBindingSource
+            // 
+            this.characterBindingSource.DataSource = typeof(EncounterBuilder.Character);
             // 
             // CurrentTurn
             // 
@@ -126,17 +127,17 @@
             this.nameDataGridViewTextBoxColumn.DataPropertyName = "Name";
             this.nameDataGridViewTextBoxColumn.Frozen = true;
             this.nameDataGridViewTextBoxColumn.HeaderText = "Name";
-            this.nameDataGridViewTextBoxColumn.MinimumWidth = 200;
+            this.nameDataGridViewTextBoxColumn.MinimumWidth = 300;
             this.nameDataGridViewTextBoxColumn.Name = "nameDataGridViewTextBoxColumn";
-            this.nameDataGridViewTextBoxColumn.Width = 379;
+            this.nameDataGridViewTextBoxColumn.Width = 300;
             // 
             // classDataGridViewTextBoxColumn
             // 
             this.classDataGridViewTextBoxColumn.DataPropertyName = "Class";
             this.classDataGridViewTextBoxColumn.HeaderText = "Class";
-            this.classDataGridViewTextBoxColumn.MinimumWidth = 200;
+            this.classDataGridViewTextBoxColumn.MinimumWidth = 150;
             this.classDataGridViewTextBoxColumn.Name = "classDataGridViewTextBoxColumn";
-            this.classDataGridViewTextBoxColumn.Width = 200;
+            this.classDataGridViewTextBoxColumn.Width = 150;
             // 
             // DexRaw
             // 
@@ -150,50 +151,50 @@
             // 
             this.fixedHPDataGridViewTextBoxColumn.DataPropertyName = "FixedHP";
             this.fixedHPDataGridViewTextBoxColumn.HeaderText = "HP";
-            this.fixedHPDataGridViewTextBoxColumn.MinimumWidth = 50;
+            this.fixedHPDataGridViewTextBoxColumn.MinimumWidth = 75;
             this.fixedHPDataGridViewTextBoxColumn.Name = "fixedHPDataGridViewTextBoxColumn";
-            this.fixedHPDataGridViewTextBoxColumn.Width = 50;
+            this.fixedHPDataGridViewTextBoxColumn.Width = 75;
             // 
             // fixedTHPDataGridViewTextBoxColumn
             // 
             this.fixedTHPDataGridViewTextBoxColumn.DataPropertyName = "FixedTHP";
             this.fixedTHPDataGridViewTextBoxColumn.HeaderText = "THP";
-            this.fixedTHPDataGridViewTextBoxColumn.MinimumWidth = 50;
+            this.fixedTHPDataGridViewTextBoxColumn.MinimumWidth = 75;
             this.fixedTHPDataGridViewTextBoxColumn.Name = "fixedTHPDataGridViewTextBoxColumn";
-            this.fixedTHPDataGridViewTextBoxColumn.Width = 50;
+            this.fixedTHPDataGridViewTextBoxColumn.Width = 75;
             // 
             // levelDataGridViewTextBoxColumn
             // 
             this.levelDataGridViewTextBoxColumn.DataPropertyName = "Level";
             this.levelDataGridViewTextBoxColumn.HeaderText = "LVL";
-            this.levelDataGridViewTextBoxColumn.MinimumWidth = 50;
+            this.levelDataGridViewTextBoxColumn.MinimumWidth = 75;
             this.levelDataGridViewTextBoxColumn.Name = "levelDataGridViewTextBoxColumn";
-            this.levelDataGridViewTextBoxColumn.Width = 50;
+            this.levelDataGridViewTextBoxColumn.Width = 75;
             // 
             // aCDataGridViewTextBoxColumn
             // 
             this.aCDataGridViewTextBoxColumn.DataPropertyName = "AC";
             this.aCDataGridViewTextBoxColumn.HeaderText = "AC";
-            this.aCDataGridViewTextBoxColumn.MinimumWidth = 50;
+            this.aCDataGridViewTextBoxColumn.MinimumWidth = 75;
             this.aCDataGridViewTextBoxColumn.Name = "aCDataGridViewTextBoxColumn";
-            this.aCDataGridViewTextBoxColumn.Width = 50;
+            this.aCDataGridViewTextBoxColumn.Width = 75;
             // 
             // Speed
             // 
             this.Speed.DataPropertyName = "Speed";
             this.Speed.HeaderText = "Speed(ft.)";
-            this.Speed.MinimumWidth = 50;
+            this.Speed.MinimumWidth = 75;
             this.Speed.Name = "Speed";
-            this.Speed.Width = 50;
+            this.Speed.Width = 75;
             // 
             // RunEncounterForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(931, 526);
+            this.ClientSize = new System.Drawing.Size(972, 526);
             this.Controls.Add(this.button3);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this._btnExit);
+            this.Controls.Add(this._btnSave);
             this.Controls.Add(this._dataGridViewRunEncounter);
             this.Name = "RunEncounterForm";
             this.Text = "RunEncounterForm";
@@ -206,8 +207,8 @@
         #endregion
 
         private System.Windows.Forms.DataGridView _dataGridViewRunEncounter;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button _btnSave;
+        private System.Windows.Forms.Button _btnExit;
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.BindingSource characterBindingSource;
         private System.Windows.Forms.DataGridViewCheckBoxColumn CurrentTurn;

@@ -15,10 +15,18 @@ namespace EncounterBuilder
         public RunEncounterForm(Encounter encounter)
         {
             InitializeComponent();
-            Encounter = encounter;
+            var encntr = new Encounter(encounter);
+            Encounter = encntr;
             charList = new List<Character>(Encounter.Characters);
-            characterBindingSource.DataSource = charList.ToList();
-            Text = Encounter.Name;           
+            var view = new SortableBindingList<Character>();           
+            foreach(var chrc in charList)
+            {
+                view.Add(chrc);
+            }
+
+            characterBindingSource.DataSource = view;
+            Text = Encounter.Name;
+            _btnSave.Enabled = false;
             DialogResult = DialogResult.Cancel;
         }
 
@@ -31,9 +39,15 @@ namespace EncounterBuilder
             var result = MessageBox.Show(this, "Save changes?", "Save Encounter", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
             if (result == DialogResult.Yes)
             {
+                charList.Clear();
                 Encounter.LastEdit = DateTime.Now;
-                Encounter.Characters = characterBindingSource.List as List<Character>;
+                foreach (var chrc in characterBindingSource.List as List<Character>)
+                {
+                    charList.Add(new Character(chrc));
+                }
+                Encounter.Characters = charList;
                 _editFlag = true;
+                _btnSave.Enabled = false;
             }                     
         }
 
@@ -44,7 +58,7 @@ namespace EncounterBuilder
 
         private void _dataGridViewRunEncounter_CellEndEdit( object sender, DataGridViewCellEventArgs e )
         {
-           
+            _btnSave.Enabled = true;
         }
 
         private void OnExit( object sender, EventArgs e )
@@ -54,6 +68,16 @@ namespace EncounterBuilder
             else
                 DialogResult = DialogResult.Cancel;
             Close();
+        }
+
+        ListSortDirection sort = new ListSortDirection();
+        private void OnColumnHeaderClick( object sender, DataGridViewCellMouseEventArgs e )
+        {
+            if (sort == ListSortDirection.Descending)
+                sort = ListSortDirection.Ascending;
+            else
+                sort = ListSortDirection.Descending;
+            _dataGridViewRunEncounter.Sort(_dataGridViewRunEncounter.Columns[e.ColumnIndex], sort);
         }
     }
 }
